@@ -11,13 +11,14 @@ class QueryRewriter:
         Rewrite follow-up queries into standalone medical questions.
         """
 
-        # Extract previous user message
+        # Extract previous user messages (excluding current message)
         previous_user_msgs = [
             msg["content"]
             for msg in history
-            if msg["role"] == "user"
+            if msg["role"] == "user" and msg["content"] != message
         ]
 
+        # If no prior question, return as-is
         if not previous_user_msgs:
             return message
 
@@ -46,4 +47,10 @@ Rewritten standalone question:
 
         rewritten = self.client.generate(rewrite_prompt)
 
-        return rewritten.strip()
+        rewritten = rewritten.strip()
+
+        # Safety fallback
+        if not rewritten:
+            return message
+
+        return rewritten

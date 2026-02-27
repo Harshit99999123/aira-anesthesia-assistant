@@ -75,7 +75,7 @@ def remove_invalid_nodes(nodes: List[BookmarkNode]) -> List[BookmarkNode]:
     return cleaned_nodes
 
 
-def parse_pdf_bookmarks(pdf_path: str) -> List[BookmarkNode]:
+def parse_pdf_bookmarks(pdf_path: str) -> list[BookmarkNode] | None:
     """
     Main function:
     - Opens PDF
@@ -90,7 +90,7 @@ def parse_pdf_bookmarks(pdf_path: str) -> List[BookmarkNode]:
     total_pages = len(doc)
 
     if not toc:
-        raise ValueError("No bookmarks (TOC) found in PDF.")
+        return None
 
     tree = build_bookmark_tree(toc)
     assign_end_pages(tree, total_pages)

@@ -24,26 +24,27 @@ def chunk_text(text: str, chunk_size: int = 800, overlap: int = 150) -> List[str
     return chunks
 
 
-def chunk_documents(documents: List[Dict], chunk_size: int = 800, overlap: int = 150) -> List[Dict]:
+def chunk_documents(
+    documents: List[Dict],
+    chunk_size: int = 800,
+    overlap: int = 150
+) -> List[Dict]:
     """
-    Apply chunking to enriched documents.
-    Each chunk keeps full metadata.
+    Apply chunking while preserving ALL metadata dynamically.
+    Ensures citation metadata remains intact.
     """
 
     chunked_documents = []
 
     for doc in documents:
-        chunks = chunk_text(doc["text"], chunk_size, overlap)
+        text_chunks = chunk_text(doc["text"], chunk_size, overlap)
 
-        for idx, chunk in enumerate(chunks):
+        # Copy all metadata except text
+        metadata = {k: v for k, v in doc.items() if k != "text"}
+
+        for idx, chunk in enumerate(text_chunks):
             chunked_documents.append({
-                "book": doc["book"],
-                "volume": doc["volume"],
-                "section": doc["section"],
-                "chapter": doc["chapter"],
-                "heading": doc["heading"],
-                "start_page": doc["start_page"],
-                "end_page": doc["end_page"],
+                **metadata,
                 "chunk_index": idx,
                 "text": chunk
             })

@@ -4,6 +4,9 @@ from model.bookmark_node import BookmarkNode
 
 
 def extract_text_from_range(doc, start_page: int, end_page: int) -> str:
+    """
+    Extract text from a page range (inclusive).
+    """
     text_parts = []
 
     for page_num in range(start_page, end_page + 1):
@@ -16,46 +19,50 @@ def extract_text_from_range(doc, start_page: int, end_page: int) -> str:
 def build_documents_with_text(
     pdf_path: str,
     nodes: List[BookmarkNode],
-    book_name: str = "Miller Anesthesia"
 ) -> List[Dict]:
+    """
+    Build structured documents from bookmark tree.
 
-    documents = []
+    Each leaf node becomes one document.
+
+    Returns:
+        List[Dict] with:
+            - hierarchy (full path from root to leaf)
+            - level (leaf level)
+            - start_page
+            - end_page
+            - text
+    """
+
+    documents: List[Dict] = []
     doc = fitz.open(pdf_path)
 
-    def traverse(node_list, current_volume=None, current_section=None, current_chapter=None):
+    def traverse(node_list: List[BookmarkNode], hierarchy_path: List[str]):
         for node in node_list:
 
-            if node.level == 1 and node.title.startswith("Volume"):
-                current_volume = node.title
+            current_path = hierarchy_path + [node.title]
 
-            elif node.level == 2:
-                current_section = node.title
-
-            elif node.level == 3:
-                current_chapter = node.title
-
+            # Leaf node → create document
             if not node.children:
-                text = extract_text_from_range(doc, node.start_page, node.end_page)
+                text = extract_text_from_range(
+                    doc,
+                    node.start_page,
+                    node.end_page
+                )
 
                 documents.append({
-                    "book": book_name,
-                    "volume": current_volume,
-                    "section": current_section,
-                    "chapter": current_chapter,
-                    "heading": node.title,
+                    "hierarchy": current_path,
+                    "level": node.level,
                     "start_page": node.start_page,
                     "end_page": node.end_page,
                     "text": text
                 })
-            else:
-                traverse(
-                    node.children,
-                    current_volume=current_volume,
-                    current_section=current_section,
-                    current_chapter=current_chapter
-                )
 
-    traverse(nodes)
+            # Non-leaf → continue traversal
+            else:
+                traverse(node.children, current_path)
+
+    traverse(nodes, [])
     doc.close()
 
     return documents

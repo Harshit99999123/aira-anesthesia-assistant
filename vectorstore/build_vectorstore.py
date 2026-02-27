@@ -3,23 +3,15 @@ from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict
 import uuid
-import shutil
-import os
 
 
 class VectorStoreBuilder:
 
-    def __init__(self,
-                 persist_directory: str = "vectorstore",
-                 collection_name: str = "miller_anesthesia",
-                 rebuild: bool = False):
-
-        self.persist_directory = persist_directory
-        self.collection_name = collection_name
-
-        if rebuild and os.path.exists(persist_directory):
-            print("Rebuild flag enabled. Deleting existing vectorstore...")
-            shutil.rmtree(persist_directory)
+    def __init__(
+        self,
+        persist_directory: str = "vectorstore",
+        collection_name: str = "medical_knowledge",
+    ):
 
         self.client = chromadb.Client(
             Settings(
@@ -29,38 +21,52 @@ class VectorStoreBuilder:
         )
 
         self.collection = self.client.get_or_create_collection(
-            name=self.collection_name
+            name=collection_name
         )
-
-        if self.collection.count() > 0 and not rebuild:
-            print("Collection already contains data.")
-            print("If you want to rebuild, set rebuild=True.")
 
         print("Loading embedding model...")
         self.model = SentenceTransformer("BAAI/bge-base-en-v1.5")
 
-    def embed_and_store(self, chunked_docs: List[Dict], batch_size: int = 64):
+    # --------------------------------------------------
+    # Delete existing book before re-ingesting
+    # --------------------------------------------------
+
+    def delete_book(self, book_id: str):
+        print(f"Deleting existing chunks for book_id={book_id} (if any)...")
+        self.collection.delete(
+            where={"book_id": book_id}
+        )
+
+    # --------------------------------------------------
+    # Embed and store
+    # --------------------------------------------------
+
+    def embed_and_store(
+        self,
+        chunked_docs: List[Dict],
+        book_id: str,
+        book_name: str,
+        batch_size: int = 64
+    ):
+
+        # Step 1: Remove old version of this book
+        self.delete_book(book_id)
 
         total = len(chunked_docs)
-        print(f"Embedding {total} chunks...")
+        print(f"Embedding {total} chunks for book_id={book_id}...")
 
         for i in range(0, total, batch_size):
             batch = chunked_docs[i:i + batch_size]
 
             texts = [doc["text"] for doc in batch]
-            metadatas = [
-                {
-                    "book": doc["book"],
-                    "volume": doc["volume"],
-                    "section": doc["section"],
-                    "chapter": doc["chapter"],
-                    "heading": doc["heading"],
-                    "start_page": doc["start_page"],
-                    "end_page": doc["end_page"],
-                    "chunk_index": doc["chunk_index"]
-                }
-                for doc in batch
-            ]
+
+            # Preserve all metadata dynamically
+            metadatas = []
+            for doc in batch:
+                metadata = {k: v for k, v in doc.items() if k != "text"}
+                metadata["book_id"] = book_id
+                metadata["book_name"] = book_name
+                metadatas.append(metadata)
 
             embeddings = self.model.encode(texts, show_progress_bar=False)
 
