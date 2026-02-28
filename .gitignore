@@ -14,8 +14,11 @@ __pycache__/
 
 # Runtime/generated data - do not commit
 chat_history/
-vectorstore/
 data_bank/
+
+# Vector store: ignore generated DB/index files but keep source code
+vectorstore/**
+!vectorstore/build_vectorstore.py
 
 # Generated ingestion artifacts
 ingestion/vectorstore/
