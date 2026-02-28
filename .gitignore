@@ -1,0 +1,13 @@
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Gradio local runtime files
+.gradio/
+
+# IDE/system noise
+.idea/
+.DS_Store

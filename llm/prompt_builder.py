@@ -1,4 +1,5 @@
 from typing import List, Dict
+import json
 
 
 class PromptBuilder:
@@ -27,6 +28,12 @@ STRICT RULES:
 
         book_name = metadata.get("book_name", "Unknown Source")
         hierarchy = metadata.get("hierarchy", [])
+        if isinstance(hierarchy, str):
+            try:
+                parsed = json.loads(hierarchy)
+                hierarchy = parsed if isinstance(parsed, list) else [hierarchy]
+            except Exception:
+                hierarchy = [hierarchy]
 
         hierarchy_str = " → ".join(hierarchy) if hierarchy else "Untitled Section"
 

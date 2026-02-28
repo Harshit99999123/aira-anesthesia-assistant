@@ -1,6 +1,7 @@
 import fitz
 from typing import List, Dict
 from model.bookmark_node import BookmarkNode
+from ingestion.diagram_extractor import extract_diagrams_for_range
 
 
 def extract_text_from_range(doc, start_page: int, end_page: int) -> str:
@@ -19,6 +20,7 @@ def extract_text_from_range(doc, start_page: int, end_page: int) -> str:
 def build_documents_with_text(
     pdf_path: str,
     nodes: List[BookmarkNode],
+    diagrams_output_dir: str | None = None,
 ) -> List[Dict]:
     """
     Build structured documents from bookmark tree.
@@ -36,6 +38,7 @@ def build_documents_with_text(
 
     documents: List[Dict] = []
     doc = fitz.open(pdf_path)
+    page_diagram_cache: Dict[int, List[str]] = {}
 
     def traverse(node_list: List[BookmarkNode], hierarchy_path: List[str]):
         for node in node_list:
@@ -49,13 +52,21 @@ def build_documents_with_text(
                     node.start_page,
                     node.end_page
                 )
+                diagram_paths = extract_diagrams_for_range(
+                    doc,
+                    node.start_page,
+                    node.end_page,
+                    output_dir=diagrams_output_dir,
+                    page_diagram_cache=page_diagram_cache
+                )
 
                 documents.append({
                     "hierarchy": current_path,
                     "level": node.level,
                     "start_page": node.start_page,
                     "end_page": node.end_page,
-                    "text": text
+                    "text": text,
+                    "diagram_paths": diagram_paths
                 })
 
             # Non-leaf → continue traversal

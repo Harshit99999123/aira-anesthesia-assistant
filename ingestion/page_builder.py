@@ -1,8 +1,12 @@
 import fitz
 from typing import List, Dict
+from ingestion.diagram_extractor import extract_diagrams_for_range
 
 
-def build_documents_pagewise(pdf_path: str) -> List[Dict]:
+def build_documents_pagewise(
+    pdf_path: str,
+    diagrams_output_dir: str | None = None
+) -> List[Dict]:
     """
     Fallback builder for PDFs without bookmarks.
     Each page becomes one document.
@@ -10,6 +14,7 @@ def build_documents_pagewise(pdf_path: str) -> List[Dict]:
 
     doc = fitz.open(pdf_path)
     documents = []
+    page_diagram_cache: Dict[int, List[str]] = {}
 
     for page_num in range(len(doc)):
         page = doc.load_page(page_num)
@@ -24,7 +29,14 @@ def build_documents_pagewise(pdf_path: str) -> List[Dict]:
             "level": 1,
             "start_page": page_num,
             "end_page": page_num,
-            "text": text
+            "text": text,
+            "diagram_paths": extract_diagrams_for_range(
+                doc,
+                page_num,
+                page_num,
+                output_dir=diagrams_output_dir,
+                page_diagram_cache=page_diagram_cache
+            )
         })
 
     doc.close()

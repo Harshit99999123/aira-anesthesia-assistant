@@ -3,6 +3,7 @@ from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict
 import uuid
+import json
 
 
 class VectorStoreBuilder:
@@ -24,8 +25,11 @@ class VectorStoreBuilder:
             name=collection_name
         )
 
-        print("Loading embedding model...")
-        self.model = SentenceTransformer("BAAI/bge-base-en-v1.5")
+        print("Loading embedding model (local cache)...")
+        self.model = SentenceTransformer(
+            "BAAI/bge-base-en-v1.5",
+            local_files_only=True
+        )
 
     # --------------------------------------------------
     # Delete existing book before re-ingesting
@@ -63,7 +67,16 @@ class VectorStoreBuilder:
             # Preserve all metadata dynamically
             metadatas = []
             for doc in batch:
-                metadata = {k: v for k, v in doc.items() if k != "text"}
+                metadata = {}
+                for key, value in doc.items():
+                    if key == "text":
+                        continue
+                    # Chroma rejects empty list metadata values.
+                    # Serialize all lists to JSON strings for stable storage.
+                    if isinstance(value, list):
+                        metadata[key] = json.dumps(value)
+                    else:
+                        metadata[key] = value
                 metadata["book_id"] = book_id
                 metadata["book_name"] = book_name
                 metadatas.append(metadata)

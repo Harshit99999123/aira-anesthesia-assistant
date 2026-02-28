@@ -26,8 +26,11 @@ class Retriever:
 
         self.collection = self.client.get_collection(name=collection_name)
 
-        print("Loading embedding model for retrieval...")
-        self.model = SentenceTransformer("BAAI/bge-base-en-v1.5")
+        print("Loading embedding model for retrieval (local cache)...")
+        self.model = SentenceTransformer(
+            "BAAI/bge-base-en-v1.5",
+            local_files_only=True
+        )
 
     # --------------------------------------------------
     # Query Expansion

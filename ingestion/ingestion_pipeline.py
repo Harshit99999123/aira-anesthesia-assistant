@@ -1,4 +1,5 @@
 import os
+import shutil
 from ingestion.bookmark_parser import parse_pdf_bookmarks
 from ingestion.document_builder import build_documents_with_text
 from ingestion.chunker import chunk_documents
@@ -6,7 +7,7 @@ from ingestion.page_builder import build_documents_pagewise
 from vectorstore.build_vectorstore import VectorStoreBuilder
 
 
-PDF_PATH = "../Barash-Clinical-Anaesthesiology-231220_124533.pdf"
+PDF_PATH = "/Users/harshit/PycharmProjects/anaestheia_assisstant/data_bank/The-ICU-Book-5E-2025-Paul-L-Marino-ALGrawany.pdf"
 
 
 def generate_book_id(pdf_path: str) -> str:
@@ -17,19 +18,32 @@ def generate_book_id(pdf_path: str) -> str:
 def start_ingestion():
     book_id = generate_book_id(PDF_PATH)
     book_name = os.path.basename(PDF_PATH).replace(".pdf", "")
+    diagrams_dir = os.path.abspath(os.path.join("data_bank", "diagrams", book_id))
 
     print("Book ID:", book_id)
     print("Book Name:", book_name)
+    print("Diagrams Dir:", diagrams_dir)
+
+    # Remove previous diagram extracts for this book.
+    if os.path.exists(diagrams_dir):
+        shutil.rmtree(diagrams_dir)
 
     print("\nStep 1: Parsing bookmarks...")
     tree = parse_pdf_bookmarks(PDF_PATH)
 
     print("Step 2: Building structured documents with text...")
     if tree:
-        docs = build_documents_with_text(PDF_PATH, tree)
+        docs = build_documents_with_text(
+            PDF_PATH,
+            tree,
+            diagrams_output_dir=diagrams_dir
+        )
     else:
         print("No bookmarks found. Falling back to page-wise ingestion.")
-        docs = build_documents_pagewise(PDF_PATH)
+        docs = build_documents_pagewise(
+            PDF_PATH,
+            diagrams_output_dir=diagrams_dir
+        )
 
     print("Total structured documents:", len(docs))
 
@@ -44,6 +58,7 @@ def start_ingestion():
         print("Hierarchy:", " → ".join(sample["hierarchy"]))
         print("Pages:", sample["start_page"], "-", sample["end_page"])
         print("Chunk Index:", sample["chunk_index"])
+        print("Diagram Count:", len(sample.get("diagram_paths", [])))
 
         print("\n--- SAMPLE CHUNK TEXT (first 500 chars) ---")
         print(sample["text"][:500])
