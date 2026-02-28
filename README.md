@@ -194,7 +194,3 @@ Ensure the model exists in your local transformers cache.
 - Re-ingesting a book overwrites only that book’s vectors in Chroma (same `book_id`).
 - Other books remain intact.
 - Runtime artifacts (vectorstore binaries, cache, diagrams, chat history) are intentionally excluded from source control via `.gitignore`.
-
-## License
-
-Add your preferred license here (e.g., MIT).
