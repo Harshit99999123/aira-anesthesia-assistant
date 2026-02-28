@@ -11,3 +11,12 @@ __pycache__/
 # IDE/system noise
 .idea/
 .DS_Store
+
+# Runtime/generated data - do not commit
+chat_history/
+vectorstore/
+data_bank/
+
+# Generated ingestion artifacts
+ingestion/vectorstore/
+ingestion/data_bank/
