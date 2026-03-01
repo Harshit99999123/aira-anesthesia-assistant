@@ -1,12 +1,16 @@
 import gradio as gr
 import json
 import os
+import time
+import uuid
 from urllib.parse import quote
 from retrieval.retriever import Retriever
 from llm.llm_service import LLMService
 from llm.query_rewriter import QueryRewriter
 import whisper
 import torch
+from config.settings import settings
+from observability.logging import log_event
 from storage.conversation_store import (
     create_conversation,
     save_conversation,
@@ -18,16 +22,36 @@ from storage.conversation_store import (
 # Core Components
 # ----------------------------
 
-retriever = Retriever(similarity_threshold=0.35, top_k=8)
-llm_service = LLMService(model="mistral")
-rewriter = QueryRewriter(model="mistral")
+retriever = Retriever(
+    persist_directory=settings.chroma_persist_directory,
+    collection_name=settings.chroma_collection_name,
+    similarity_threshold=settings.similarity_threshold,
+    top_k=settings.retriever_top_k,
+)
+llm_service = LLMService(model=settings.ollama_model)
+rewriter = QueryRewriter(model=settings.ollama_model)
+
+
+def _resolve_book_choices():
+    if settings.allowed_book_ids:
+        return ["All Books"] + settings.allowed_book_ids
+    try:
+        dynamic_books = retriever.list_book_ids()
+        if dynamic_books:
+            return ["All Books"] + dynamic_books
+    except Exception as exc:
+        log_event("book_choices_resolve_failed", error=str(exc))
+    return ["All Books"]
+
+
+BOOK_CHOICES = _resolve_book_choices()
 
 # ----------------------------
 # Load Whisper model
 # ----------------------------
 
 device = "mps" if torch.backends.mps.is_available() else "cpu"
-whisper_model = whisper.load_model("base", device=device)
+whisper_model = whisper.load_model(settings.whisper_model, device=device)
 
 # ----------------------------
 # Voice → Text
@@ -52,6 +76,13 @@ def load_conversations_on_start():
     )
 
 def generate_response(message, history, selected_book, convo_id):
+    request_id = str(uuid.uuid4())
+    request_start = time.time()
+    log_event(
+        "query_received",
+        request_id=request_id,
+        selected_book=selected_book,
+    )
 
     if history is None:
         history = []
@@ -63,27 +94,46 @@ def generate_response(message, history, selected_book, convo_id):
         convo_id = create_conversation(title)
         new_convo_created = True
 
+    rewrite_start = time.time()
     rewritten_query = rewriter.rewrite(message, history)
+    log_event(
+        "query_rewritten",
+        request_id=request_id,
+        latency_ms=round((time.time() - rewrite_start) * 1000, 2),
+    )
 
     history.append({"role": "user", "content": message})
 
-    if selected_book == "All Books":
+    retrieval_start = time.time()
+    if selected_book == "All Books" or selected_book not in BOOK_CHOICES:
         retrieval_response = retriever.retrieve(rewritten_query)
     else:
         retrieval_response = retriever.retrieve(
             rewritten_query,
             book_id=selected_book
         )
+    log_event(
+        "retrieval_done",
+        request_id=request_id,
+        status=retrieval_response.get("status"),
+        latency_ms=round((time.time() - retrieval_start) * 1000, 2),
+    )
 
     assistant_message = {"role": "assistant", "content": ""}
     history.append(assistant_message)
 
+    llm_start = time.time()
     for token in llm_service.generate_answer_stream(
         rewritten_query,
         retrieval_response
     ):
         assistant_message["content"] += token
         yield history, convo_id, None
+    log_event(
+        "generation_done",
+        request_id=request_id,
+        latency_ms=round((time.time() - llm_start) * 1000, 2),
+    )
 
     if retrieval_response["status"] == "success":
         citations = "\n\n---\n**Sources:**\n"
@@ -162,6 +212,11 @@ def generate_response(message, history, selected_book, convo_id):
         yield history, convo_id, None
 
     save_conversation(convo_id, history)
+    log_event(
+        "response_sent",
+        request_id=request_id,
+        total_latency_ms=round((time.time() - request_start) * 1000, 2),
+    )
 
     # Refresh dropdown if new conversation created
     if new_convo_created:
@@ -215,11 +270,7 @@ with gr.Blocks() as demo:
                 )
 
             book_selector = gr.Dropdown(
-                choices=[
-                    "All Books",
-                    "miller_9e",
-                    "barash-clinical-anaesthesiology-231220_124533"
-                ],
+                choices=BOOK_CHOICES,
                 value="All Books",
                 label="Select Book Scope"
             )
@@ -268,7 +319,7 @@ with gr.Blocks() as demo:
 demo.queue()
 
 demo.launch(
-    share=True,
+    share=settings.gradio_share,
     theme=gr.themes.Soft(),
     allowed_paths=[
         os.path.abspath("data_bank/diagrams")

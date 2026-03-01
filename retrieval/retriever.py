@@ -1,7 +1,7 @@
 import chromadb
 from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 
 class Retriever:
@@ -111,6 +111,20 @@ class Retriever:
             "max_similarity": filtered_results[0]["similarity"],
             "results": filtered_results
         }
+
+    def list_book_ids(self) -> List[str]:
+        rows = self.collection.get(include=["metadatas"])
+        metadatas = rows.get("metadatas") or []
+        seen = set()
+        ordered = []
+        for metadata in metadatas:
+            book_id = metadata.get("book_id")
+            if isinstance(book_id, str):
+                value = book_id.strip()
+                if value and value not in seen:
+                    seen.add(value)
+                    ordered.append(value)
+        return ordered
 
     # --------------------------------------------------
     # Reference Filter

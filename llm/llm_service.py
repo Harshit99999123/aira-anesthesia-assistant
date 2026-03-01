@@ -18,5 +18,19 @@ class LLMService:
             retrieval_response["results"]
         )
 
-        for token in self.client.generate_stream(prompt):
-            yield token
+        try:
+            emitted = False
+            for token in self.client.generate_stream(prompt):
+                emitted = True
+                yield token
+
+            if not emitted:
+                yield (
+                    "I’m unable to generate a response right now due to an upstream model issue. "
+                    "Please try again."
+                )
+        except Exception:
+            yield (
+                "I’m unable to generate a response right now due to an upstream model issue. "
+                "Please try again."
+            )
