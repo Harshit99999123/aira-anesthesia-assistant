@@ -45,6 +45,8 @@ class AppSettings:
     ollama_model: str
     retriever_top_k: int
     similarity_threshold: float
+    min_support_chunks: int
+    min_avg_similarity: float
     chroma_persist_directory: str
     chroma_collection_name: str
     gradio_share: bool
@@ -58,6 +60,8 @@ def load_settings() -> AppSettings:
         ollama_model=os.getenv("OLLAMA_MODEL", "mistral"),
         retriever_top_k=_get_int("RETRIEVER_TOP_K", 8),
         similarity_threshold=_get_float("SIMILARITY_THRESHOLD", 0.35),
+        min_support_chunks=_get_int("MIN_SUPPORT_CHUNKS", 1),
+        min_avg_similarity=_get_float("MIN_AVG_SIMILARITY", 0.0),
         chroma_persist_directory=os.getenv("CHROMA_PERSIST_DIRECTORY", "vectorstore"),
         chroma_collection_name=os.getenv("CHROMA_COLLECTION_NAME", "medical_knowledge"),
         gradio_share=_get_bool("GRADIO_SHARE", True),

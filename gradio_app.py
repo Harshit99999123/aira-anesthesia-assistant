@@ -27,6 +27,8 @@ retriever = Retriever(
     collection_name=settings.chroma_collection_name,
     similarity_threshold=settings.similarity_threshold,
     top_k=settings.retriever_top_k,
+    min_support_chunks=settings.min_support_chunks,
+    min_avg_similarity=settings.min_avg_similarity,
 )
 llm_service = LLMService(model=settings.ollama_model)
 rewriter = QueryRewriter(model=settings.ollama_model)

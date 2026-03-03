@@ -83,6 +83,8 @@ The app now supports environment-driven runtime config:
 - `OLLAMA_MODEL` (default: `mistral`)
 - `RETRIEVER_TOP_K` (default: `8`)
 - `SIMILARITY_THRESHOLD` (default: `0.35`)
+- `MIN_SUPPORT_CHUNKS` (default: `1`, set `2+` to enforce denser support before generation)
+- `MIN_AVG_SIMILARITY` (default: `0.0`, raise to enforce stronger average support)
 - `CHROMA_PERSIST_DIRECTORY` (default: `vectorstore`)
 - `CHROMA_COLLECTION_NAME` (default: `medical_knowledge`)
 - `GRADIO_SHARE` (default: `true`)
@@ -96,6 +98,8 @@ Example:
 export OLLAMA_MODEL=mistral
 export RETRIEVER_TOP_K=8
 export SIMILARITY_THRESHOLD=0.35
+export MIN_SUPPORT_CHUNKS=2
+export MIN_AVG_SIMILARITY=0.45
 export ALLOWED_BOOK_IDS="miller,barash-clinical-anaesthesiology-231220_124533,the-icu-book-5e-2025-paul-l-marino-algrawany"
 python gradio_app.py
 ```

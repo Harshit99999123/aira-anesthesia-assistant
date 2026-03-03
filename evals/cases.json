@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "case_id": "retrieval_spinal_hypotension",
+      "query": "How do you treat hypotension after spinal anesthesia?",
+      "book_id": null,
+      "expect_refused": false,
+      "expected_terms": ["spinal", "hypotension"],
+      "expected_source_any": ["anaesth", "miller", "barash"],
+      "expected_answer_terms": ["vasopressor", "fluid"],
+      "forbidden_answer_terms": ["I do not know"],
+      "require_diagram": false
+    },
+    {
+      "case_id": "out_of_scope_refusal",
+      "query": "Who won the FIFA world cup in 2018?",
+      "book_id": null,
+      "expect_refused": true,
+      "expected_terms": [],
+      "expected_source_any": [],
+      "expected_answer_terms": [],
+      "forbidden_answer_terms": [],
+      "require_diagram": false
+    }
+  ]
+}

@@ -1,0 +1,478 @@
+Production Readiness Guide For This RAG Assistant
+
+Date: 2026-03-01
+Scope: Explain why the current system is not production-ready yet and what robust production-grade versions look like.
+This document is intentionally detailed and implementation-oriented, but does not apply these changes to the codebase.
+
+-------------------------------------------------------------------------------
+1) RELIABILITY: TEST COVERAGE + CI GATE IS MISSING
+-------------------------------------------------------------------------------
+
+Why this matters
+- Production systems need predictable behavior under code changes.
+- Without automated tests and CI, regressions silently ship.
+- In medical-adjacent software, regressions can become high-impact errors.
+
+Current risk pattern in this repo
+- Core components (retriever, query rewriting, prompt building, storage) can change behavior with no automated blocking check.
+- A manual eval run is useful but not enough by itself.
+
+What production-ready looks like
+- Unit tests for pure logic functions.
+- Integration tests for retrieval + generation orchestration.
+- CI pipeline that fails on test breakage and quality checks.
+
+Example unit test snippet (pytest)
+
+```python
+# tests/test_prompt_builder.py
+from llm.prompt_builder import PromptBuilder
+
+
+def test_build_prompt_includes_context_and_question():
+    chunks = [
+        {
+            "text": "Phenylephrine increases SVR.",
+            "metadata": {
+                "book_name": "Miller",
+                "hierarchy": ["Vasopressors"],
+                "start_page": 100,
+                "end_page": 102,
+            },
+        }
+    ]
+    prompt = PromptBuilder.build_prompt("How to treat spinal hypotension?", chunks)
+
+    assert "CONTEXT:" in prompt
+    assert "QUESTION:" in prompt
+    assert "Phenylephrine increases SVR." in prompt
+```
+
+Example integration test snippet (mocking external LLM)
+
+```python
+# tests/test_chat_orchestration.py
+from unittest.mock import Mock
+from llm.llm_service import LLMService
+
+
+def test_refusal_path_short_circuits_generation(monkeypatch):
+    svc = LLMService(model="mistral")
+    monkeypatch.setattr(svc, "client", Mock())
+
+    retrieval_response = {
+        "status": "refused",
+        "message": "The answer is not available in the indexed medical sources."
+    }
+
+    output = "".join(svc.generate_answer_stream("query", retrieval_response))
+    assert "not available" in output.lower()
+```
+
+Example CI workflow snippet (GitHub Actions)
+
+```yaml
+# .github/workflows/ci.yml
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: pip install pytest ruff
+      - run: ruff check .
+      - run: pytest -q
+```
+
+-------------------------------------------------------------------------------
+2) SAFETY: PROMPT-ONLY GUARDRAILS ARE NOT SUFFICIENT
+-------------------------------------------------------------------------------
+
+Why this matters
+- Prompt instructions can reduce risk but are not deterministic controls.
+- For medical context, you need policy checks before and after model output.
+
+Current risk pattern in this repo
+- Safety relies heavily on SYSTEM_INSTRUCTIONS.
+- No explicit severity classification or hard stop policy for high-risk outputs.
+
+What production-ready looks like
+- Input risk classifier (e.g., emergency symptom query).
+- Output safety validator (forbidden advice patterns, unsupported claims).
+- Deterministic policy fallback response.
+
+Example policy gate snippet
+
+```python
+# safety/policy.py
+HIGH_RISK_PATTERNS = [
+    "chest pain now",
+    "cannot breathe",
+    "suicidal",
+    "severe bleeding",
+]
+
+
+def classify_risk(user_query: str) -> str:
+    q = user_query.lower()
+    if any(p in q for p in HIGH_RISK_PATTERNS):
+        return "high"
+    return "normal"
+
+
+def enforce_policy(query: str) -> str | None:
+    risk = classify_risk(query)
+    if risk == "high":
+        return (
+            "This may be an emergency. Seek immediate in-person medical care or call local emergency services now. "
+            "I cannot safely handle urgent triage in this interface."
+        )
+    return None
+```
+
+Example post-generation validator snippet
+
+```python
+# safety/output_validation.py
+FORBIDDEN_PATTERNS = [
+    "ignore your doctor",
+    "definitely safe for everyone",
+    "no need to monitor",
+]
+
+
+def validate_output(text: str) -> bool:
+    lower = text.lower()
+    return not any(p in lower for p in FORBIDDEN_PATTERNS)
+```
+
+-------------------------------------------------------------------------------
+3) ROBUSTNESS: OLLAMA NETWORK CLIENT NEEDS TIMEOUTS, RETRIES, CIRCUIT BREAKER
+-------------------------------------------------------------------------------
+
+Why this matters
+- Network calls fail in real operations (latency spikes, connection resets, overload).
+- No timeout can hang request threads and degrade entire service.
+
+Current risk pattern in this repo
+- `requests.post()` calls are made without explicit timeout.
+- No retry/backoff policy.
+- No circuit breaker when upstream is repeatedly failing.
+
+What production-ready looks like
+- Bounded timeout.
+- Retry with exponential backoff for transient errors.
+- Circuit breaker to fail fast and preserve system responsiveness.
+
+Example robust client snippet
+
+```python
+# llm/resilient_client.py
+import time
+import requests
+
+
+class CircuitOpenError(RuntimeError):
+    pass
+
+
+class ResilientOllamaClient:
+    def __init__(self, base_url: str, model: str):
+        self.base_url = base_url
+        self.model = model
+        self.fail_count = 0
+        self.open_until = 0.0
+
+    def _check_circuit(self):
+        if time.time() < self.open_until:
+            raise CircuitOpenError("LLM circuit is open")
+
+    def _record_failure(self):
+        self.fail_count += 1
+        if self.fail_count >= 5:
+            self.open_until = time.time() + 30  # 30s cooldown
+
+    def _record_success(self):
+        self.fail_count = 0
+        self.open_until = 0.0
+
+    def generate(self, prompt: str) -> str:
+        self._check_circuit()
+
+        payload = {
+            "model": self.model,
+            "prompt": prompt,
+            "stream": False,
+            "options": {"temperature": 0.1, "num_predict": 200},
+        }
+
+        last_err = None
+        for attempt in range(3):
+            try:
+                res = requests.post(self.base_url, json=payload, timeout=(3.05, 30))
+                res.raise_for_status()
+                self._record_success()
+                return res.json().get("response", "")
+            except requests.RequestException as e:
+                last_err = e
+                self._record_failure()
+                time.sleep(0.5 * (2 ** attempt))
+
+        raise RuntimeError(f"LLM request failed after retries: {last_err}")
+```
+
+-------------------------------------------------------------------------------
+4) CONFIG HARD-CODING: RUNTIME VALUES SHOULD BE EXTERNALIZED
+-------------------------------------------------------------------------------
+
+Why this matters
+- Hardcoded model names/book IDs/thresholds force code edits for deployment changes.
+- Different environments (dev/staging/prod) require different configs.
+
+Current risk pattern in this repo
+- Book selector values and key runtime params are embedded in application code.
+
+What production-ready looks like
+- Environment-driven config with validation.
+- Config object injected into app components.
+
+Example config model snippet
+
+```python
+# config/settings.py
+from pydantic import BaseSettings, Field
+
+
+class Settings(BaseSettings):
+    ollama_model: str = Field(default="mistral", env="OLLAMA_MODEL")
+    retrieval_top_k: int = Field(default=8, env="RETRIEVAL_TOP_K")
+    similarity_threshold: float = Field(default=0.35, env="SIMILARITY_THRESHOLD")
+    allowed_book_ids: str = Field(default="miller,barash,the-icu-book", env="ALLOWED_BOOK_IDS")
+
+    class Config:
+        env_file = ".env"
+
+
+settings = Settings()
+```
+
+Example usage snippet
+
+```python
+# in app bootstrap
+from config.settings import settings
+
+book_choices = ["All Books"] + [b.strip() for b in settings.allowed_book_ids.split(",") if b.strip()]
+```
+
+-------------------------------------------------------------------------------
+5) OBSERVABILITY: NEED LOGS + METRICS + TRACING
+-------------------------------------------------------------------------------
+
+Why this matters
+- Without visibility, you cannot debug production failures quickly.
+- You need latency/error/risk metrics over time to maintain SLOs.
+
+Current risk pattern in this repo
+- Mostly print-based signals; no structured event schema.
+- No service metrics for retrieval refusal rate, latency, model failures.
+
+What production-ready looks like
+- Structured logs with request IDs.
+- Metrics (Prometheus/OpenTelemetry).
+- Optional traces for cross-component latency analysis.
+
+Example structured logging snippet
+
+```python
+# observability/logging.py
+import json
+import time
+
+
+def log_event(event: str, **fields):
+    payload = {
+        "ts": time.time(),
+        "event": event,
+        **fields,
+    }
+    print(json.dumps(payload, ensure_ascii=True))
+```
+
+Example instrumentation usage
+
+```python
+# in request handler
+from observability.logging import log_event
+
+log_event("query_received", request_id=req_id, book_id=book_id)
+log_event("retrieval_done", request_id=req_id, status=retrieval_status, top_k=top_k)
+log_event("response_sent", request_id=req_id, latency_ms=latency_ms)
+```
+
+Example Prometheus metric snippet
+
+```python
+# observability/metrics.py
+from prometheus_client import Counter, Histogram
+
+REQUESTS = Counter("aira_requests_total", "Total requests", ["status"])
+LATENCY = Histogram("aira_request_latency_seconds", "Request latency")
+```
+
+-------------------------------------------------------------------------------
+6) SECURITY + COMPLIANCE: AUTH, SECRETS, AUDIT, DATA HANDLING CONTROLS
+-------------------------------------------------------------------------------
+
+Why this matters
+- Production apps need access control and accountability.
+- Medical-related workflows can involve sensitive data and stricter governance.
+
+Current risk pattern in this repo
+- No explicit authentication/authorization layer.
+- No explicit PHI/PII redaction pipeline before logging/persistence.
+
+What production-ready looks like
+- AuthN/AuthZ for all non-local environments.
+- Secret management via env/vault, not hardcoded.
+- Log redaction and data retention policy.
+
+Example API key guard snippet (minimal)
+
+```python
+# security/auth.py
+import os
+
+
+def require_api_key(provided: str | None) -> bool:
+    expected = os.getenv("AIRA_API_KEY", "")
+    if not expected:
+        return False  # fail closed in production
+    return provided == expected
+```
+
+Example redaction snippet
+
+```python
+# security/redaction.py
+import re
+
+EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+PHONE = re.compile(r"\b\+?\d[\d\-\s]{7,}\d\b")
+
+
+def redact(text: str) -> str:
+    text = EMAIL.sub("[REDACTED_EMAIL]", text)
+    text = PHONE.sub("[REDACTED_PHONE]", text)
+    return text
+```
+
+-------------------------------------------------------------------------------
+7) OPERATIONS: DEPLOYMENT, HEALTH CHECKS, BACKUP/RESTORE, ROLLBACK
+-------------------------------------------------------------------------------
+
+Why this matters
+- Production readiness is operational, not just code quality.
+- You need predictable deploy and recovery pathways.
+
+Current risk pattern in this repo
+- No formal deploy spec and health endpoints.
+- Persistence assets (vectorstore/chat history) need backup discipline.
+
+What production-ready looks like
+- Containerized deployment and immutable artifacts.
+- Liveness/readiness checks.
+- Scheduled backup + tested restore.
+- Rollback instructions and version pinning.
+
+Example Docker health check snippet
+
+```dockerfile
+# Dockerfile
+FROM python:3.11-slim
+WORKDIR /app
+COPY . /app
+RUN pip install -r requirements.txt
+EXPOSE 7860
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD python -c "import socket; s=socket.socket(); s.connect(('127.0.0.1',7860)); s.close()"
+CMD ["python", "gradio_app.py"]
+```
+
+Example backup script snippet
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+TS=$(date +%Y%m%d_%H%M%S)
+tar -czf backups/aira_${TS}.tar.gz vectorstore chat_history data_bank/diagrams
+echo "backup_created=backups/aira_${TS}.tar.gz"
+```
+
+-------------------------------------------------------------------------------
+8) ANSWER QUALITY: PRE-GENERATION CONTEXT SUFFICIENCY GATE
+-------------------------------------------------------------------------------
+
+Why this matters
+- Top-k retrieval success alone does not guarantee answerability.
+- A strong prompt is helpful but is still a soft control.
+- Weak/fragmented context can lead to confident-sounding but weakly grounded outputs.
+
+Current risk pattern in this repo
+- Retrieval currently gates by per-chunk relevance threshold.
+- If retrieval returns "success", generation proceeds without checking whether support is dense enough.
+
+What production-ready looks like
+- Deterministic pre-generation gate that checks retrieval support quality.
+- Abstain when support is insufficient, before calling the generator.
+- Log refusal reason and support metrics for threshold tuning.
+
+Minimal policy (recommended first version)
+- Require at least N supporting chunks after relevance filtering.
+- Require minimum average similarity across those chunks.
+- Return a refusal message when either condition fails.
+
+Example gate snippet
+
+```python
+def context_is_sufficient(results, min_support_chunks=2, min_avg_similarity=0.45):
+    if len(results) < min_support_chunks:
+        return False, "insufficient_supporting_chunks"
+    avg_sim = sum(r["similarity"] for r in results) / len(results)
+    if avg_sim < min_avg_similarity:
+        return False, "insufficient_average_similarity"
+    return True, None
+```
+
+-------------------------------------------------------------------------------
+Practical go/no-go criteria for production
+-------------------------------------------------------------------------------
+
+You are closer to production-ready when all of these are true:
+- Test + CI gate: required and green for every deploy.
+- Safety policy layer: deterministic high-risk handling enabled.
+- LLM client resilience: timeout/retry/circuit breaker in place.
+- Context sufficiency gate: enabled before generation with tuned thresholds.
+- Config externalized: no environment-specific hardcoding in app logic.
+- Observability baseline: structured logs + latency/error metrics + alerts.
+- Security baseline: authentication + secrets management + redaction.
+- Ops baseline: health checks, deployment pipeline, backup/restore drill.
+
+-------------------------------------------------------------------------------
+Suggested implementation order (when you ask to implement)
+-------------------------------------------------------------------------------
+
+1) Robust LLM client + structured logging
+2) Config externalization + environment profiles
+3) Test suite + CI gate
+4) Safety policy layer
+5) Context sufficiency gate + threshold tuning from evals/logs
+6) Security and compliance controls
+7) Ops hardening (health checks, backup/restore)
+
+End of document.

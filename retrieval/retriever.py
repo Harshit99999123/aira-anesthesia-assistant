@@ -11,11 +11,15 @@ class Retriever:
         persist_directory: str = "vectorstore",
         collection_name: str = "medical_knowledge",
         similarity_threshold: float = 0.38,
-        top_k: int = 5
+        top_k: int = 5,
+        min_support_chunks: int = 1,
+        min_avg_similarity: float = 0.0,
     ):
 
         self.similarity_threshold = similarity_threshold
         self.top_k = top_k
+        self.min_support_chunks = max(1, min_support_chunks)
+        self.min_avg_similarity = min_avg_similarity
 
         self.client = chromadb.Client(
             Settings(
@@ -106,9 +110,15 @@ class Retriever:
                 "similarity": max(similarities)
             }
 
+        support_check = self._evaluate_context_support(filtered_results)
+        if support_check["status"] == "refused":
+            return support_check
+
         return {
             "status": "success",
             "max_similarity": filtered_results[0]["similarity"],
+            "avg_similarity": sum(item["similarity"] for item in filtered_results) / len(filtered_results),
+            "supporting_chunks": len(filtered_results),
             "results": filtered_results
         }
 
@@ -146,3 +156,37 @@ class Retriever:
                 return True
 
         return False
+
+    # --------------------------------------------------
+    # Context Sufficiency Gate
+    # --------------------------------------------------
+
+    def _evaluate_context_support(self, results: List[Dict]) -> Dict:
+        chunk_count = len(results)
+        avg_similarity = sum(item["similarity"] for item in results) / chunk_count
+
+        if chunk_count < self.min_support_chunks:
+            return {
+                "status": "refused",
+                "message": (
+                    "The retrieved context is too limited to support a reliable answer "
+                    "from the indexed medical sources."
+                ),
+                "reason": "insufficient_supporting_chunks",
+                "supporting_chunks": chunk_count,
+                "avg_similarity": avg_similarity,
+            }
+
+        if avg_similarity < self.min_avg_similarity:
+            return {
+                "status": "refused",
+                "message": (
+                    "The retrieved context is not strong enough to support a reliable answer "
+                    "from the indexed medical sources."
+                ),
+                "reason": "insufficient_average_similarity",
+                "supporting_chunks": chunk_count,
+                "avg_similarity": avg_similarity,
+            }
+
+        return {"status": "success"}

@@ -1,0 +1,709 @@
+{
+  "generated_at": "2026-03-01T14:23:04.552912",
+  "include_llm": false,
+  "model": "mistral",
+  "summary": {
+    "passed": 4,
+    "total": 5,
+    "pass_rate": 0.8,
+    "diagram_cases_total": 0,
+    "diagram_cases_passed": 0,
+    "ranking": {
+      "ranking_cases": 5,
+      "mean_mrr": 1.0,
+      "mean_dcg": 10.966718,
+      "mean_ndcg": 0.922986,
+      "mean_hit_rate": 1.0,
+      "mean_precision_at_k": 1.0,
+      "mean_term_recall": 0.8,
+      "mean_source_hit": 1.0
+    }
+  },
+  "results": [
+    {
+      "case_id": "barash-clinical-anaesthesiology-231220_124533_q001",
+      "query": "Summarize diagnosis, monitoring, and treatment considerations for intra-abdominal laparoscopic surgical fire exceedingly rare.",
+      "rewritten_query": "Summarize diagnosis, monitoring, and treatment considerations for intra-abdominal laparoscopic surgical fire exceedingly rare.",
+      "retrieval": {
+        "status": "success",
+        "max_similarity": 0.40405285358428955,
+        "results": [
+          {
+            "text": "It was noteworthy that 44% of these surgeons and presumably their\naccompanying anesthesia provider had already experienced at least one OR\nfire, with on average only 17.7 years in practice, and 12.5% of the surgeons\nhad already experienced more than one fire.111 Another survey of 258\noculoplastic surgeons found that 32% of surgeons had experienced at least\none fire in the OR and 10 as many as three fires. Eyelid surgeries were the\nmost common (90%) eye surgery associated with fire. Based on these\nnumbers, this study estimated there would be 14 fires each year related to\noculoplastic surgery alone.112\nAbdominal Surgery/Colonoscopy Fires\nDuring open abdominal procedures and colonoscopy, even room air provides\nadequate oxidizer for flammable intestinal gases (e.g., hydrogen, methane) to\nburn.114\u2013116 Similar conditions exist in open abdominal surgery with either a\nbowel perforation and release of gas into the peritoneal cavity or during\nentry into a viscus with a cautery.117 In modern practice, carbon dioxide is\nincreasingly used as the insufflating gas during gastrointestinal endoscopy\nbecause it is more comfortable for patients and recognized as safer than air\nin the event of a gas embolus. It has the incidental benefit of reducing fire\nrisk.118\nIntrabdominal \nsurgical \nprocedures \nare \nincreasingly \nperformed\nlaparoscopically. Because the insufflation gas is 100% carbon dioxide,\nwhich is fire quenching, the fire risk from the abdominal gases is low.\nHowever, if oxygen is accidentally used for insufflation, fire can and has\noccured.119\nThoracic Surgery Fires\nAn operation using cautery in the chest may also result in an in-the-patient\nfire.120,121 These fires generally follow some violation of the lung\nparenchyma, resulting in an enriched oxygen environment within the thorax or\nmediastinum accompanied by cautery and dry lap sponges.\nThe typically higher FiO2 used in thoracic and cardiac surgery patients\nincreases the risk when there is an opening in the lung. This is also true\n",
+            "metadata": {
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "end_page": 397,
+              "level": 1,
+              "hierarchy": [
+                "Page 398"
+              ],
+              "start_page": 397
+            },
+            "similarity": 0.40405285358428955
+          },
+          {
+            "text": "bleeding, while managing possible hemodynamic instability due to\nhemorrhagic shock. Intraoperative testing and interpretation of hematocrit as\nan assessment of acute blood loss should be performed cautiously, given the\nconfounding effects of preoperative hematocrit collection, active bleeding,\nand intravascular dilution from crystalloid infusion. Transfusion triggers\nshould be made on an individualized basis, taking into account estimated\nblood loss as well as the patient\u2019s hemodynamics and coexisting diseases.\nDespite these considerations, in general, the risk of bleeding complications\nduring laparoscopic procedures is rare and routine preoperative type and\nscreen testing is not necessary.102,103\nGastrointestinal structures can be injured during both abdominal entry\nand the intra-abdominal portion of the procedure.95 Bowel injuries are\ninfrequent but are a major cause of morbidity and mortality. Because many\nintestinal injuries go unrecognized, when they do occur, the risk of\npostoperative intra-abdominal sepsis is high, making it a common cause of\ndeath related to laparoscopy. Deflation of the stomach with an orogastric\ntube should be routinely performed prior to the start of surgery to minimize\nthe risk of gastric injury during left upper quadrant trocar insertion. Bladder\nperforation and ureter ligation or transection are also possible during\nsecondary trocar placement or in the context of dissection during\nlaparoscopic hysterectomy. Low urine output, hematuria, and more rarely,\npneumaturia may be signs of urologic injury during surgery. If suspected, the\npresence of an injury can be confirmed and possibly repaired via cystoscopy.\nPostoperative lower abdominal discomfort, unexpected gross hematuria, or\nrapidly rising serum creatinine should trigger immediate suspicion of occult\ninjury.\nCardiopulmonary\n12  Acute cardiovascular complications associated with laparoscopy\ninclude hypertension, hypotension, dysrhythmias, and rarely, cardiac arrest.\nHemodynamic and pulmonary changes are mediated by CO2 insufflation,\nincreased IAP, and hypercarbia. Initial insufflation at an IAP of 5 mmHg in\nnormovolemic patients leads to an increase in venous return due to\ndisplacement of blood from the splanchnic vasculature, a rise in cardiac\noutput, and hypertension. Catecholamine release further aggravates\n",
+            "metadata": {
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "level": 1,
+              "start_page": 3819,
+              "hierarchy": [
+                "Page 3820"
+              ],
+              "end_page": 3819,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "chunk_index": 0
+            },
+            "similarity": 0.3723313808441162
+          },
+          {
+            "text": "the surgical field. Then, and consistent with patient needs, the oxygen\nconcentration should be limited to 30% or less; otherwise, it is advised to\nseal the airway.62\nIn addition, for high\u2013fire-risk procedures, moistened sponges should be\nused because they are less flammable, a basin or bottle of sterile irrigating\nfluid should be readily available, and ignition sources should be kept away\nfrom the drapes. When a high fire risk is identified during the timeout, all\nparties, who each control a limb of the fire triangle, should acknowledge\ntheir awareness and preemptive plan. This communication is essential. The\nfire risk for a procedure may increase or decrease as the procedure evolves.\nOR Fires and Lessons from Closed Claims\nand Review Findings\nThe most recent closed claims analysis of OR fires was published in 2013\nand includes cases dating to 1985.70 The findings remain instructive because\nmost of the underlying hazards still exist. In that analysis of 103 fires,\nelectrosurgery was the heat/ignition source in 90% of cases. Most fires\n(81%) occurred during monitored anesthesia care or regional anesthesia\ncare. A recurring theme was that supplemental oxygen was administered via\nan open system (nasal cannula or face mask). Of the fires in the closed claims\nanalysis, 85% occurred during head, neck, or upper chest procedures.\nSignificantly, the authors observed that oxygen was often administered at\nflow rates and/or concentrations higher than what were likely needed to\nmaintain an acceptable oxygen saturation. For fires occurring under general\nanesthesia, tracheostomy and tonsillectomy were the two most common\noperations.70 The recurring etiology appears to be electrosurgery in the\npresence of an elevated oxidizer concentration at the operative site, that is,\nan oxygen \u00b1 nitrous oxide concentration >30% from a leak into the operative\nsite, for example, an uncuffed tube. In a separate review of fires associated\nwith tonsillectomy, an uncuffed tube and oxygen concentration >30% were\nnoted in 35 of 36 reported cases.71,72 A series of images from a manikin\nsimulation set up to duplicate a case where a fire occurred during a burr hole\nplacement with supplemental oxygen by face mask and monopolar\nelectrosurgery provide a vivid demonstration of the speed and intensity of the\n",
+            "metadata": {
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "end_page": 382,
+              "chunk_index": 0,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "level": 1,
+              "start_page": 382,
+              "hierarchy": [
+                "Page 383"
+              ]
+            },
+            "similarity": 0.3633197546005249
+          }
+        ]
+      },
+      "retrieved_diagram_paths": [],
+      "retrieval_eval": {
+        "checks": [
+          {
+            "name": "status_matches_expectation",
+            "passed": true,
+            "details": {
+              "expected_refused": false,
+              "actual_status": "success"
+            }
+          },
+          {
+            "name": "retrieval_contains_term:intra-abdominal",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_term:laparoscopic",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_any_expected_source",
+            "passed": true,
+            "details": {
+              "expected_any": [
+                "barash",
+                "barash-clinical-anaesthesiology-231220_124533"
+              ]
+            }
+          }
+        ],
+        "passed": true
+      },
+      "ranking_metrics": {
+        "evaluable": true,
+        "k": 3,
+        "mrr": 1.0,
+        "dcg": 7.916508,
+        "idcg": 9.392789,
+        "ndcg": 0.842828,
+        "hit_rate": 1.0,
+        "precision_at_k": 1.0,
+        "term_recall": 1.0,
+        "source_hit": 1.0,
+        "relevant_count": 3
+      },
+      "answer": null,
+      "answer_eval": null,
+      "passed": true
+    },
+    {
+      "case_id": "barash-clinical-anaesthesiology-231220_124533_q002",
+      "query": "How does respiratory depressant effects propofol dose dependent affect perioperative or critical-care decision making?",
+      "rewritten_query": "How does respiratory depressant effects propofol dose dependent affect perioperative or critical-care decision making?",
+      "retrieval": {
+        "status": "success",
+        "max_similarity": 0.5216321051120758,
+        "results": [
+          {
+            "text": "The respiratory depressant effects of propofol are also dose dependent.\nApnea is relatively common with a higher induction dose, while a typical\nmaintenance dose of propofol results in diminished tidal volumes and\nincreased respiratory rate. There is also a blunted response to hypoxia that\nmay be a direct effect on chemoreceptors, as well as a decreased respiratory\nresponse to hypercarbia. Propofol is a potent bronchodilator, primarily\nbecause of its direct effects on intracellular calcium homeostasis.\nClinical Uses\n4  The rapid and smooth induction and emergence from anesthesia helped\ntransform propofol into an intravenous sedative\u2013hypnotic that is a viable\nalternative to standard inhalational agents and other intravenous drugs. The\ninduction dose in a healthy adult is approximately 1 to 2.5 mg/kg, and loss of\nconsciousness is commonly achieved at corresponding blood concentration\nclose to 3 mcg/kg. Induction dose requirement variability is tremendous\namong patients with different characteristics and comorbidities. Elderly\npatients typically have prolonged effects and increased sensitivity to\npropofol because of decreased cardiac output and clearance.25 On the\nopposite end of the spectrum, children typically have a larger than average\nvolume of distribution and quicker clearance, resulting in increased propofol\nrequirement on a per-kilogram basis.26 Morbidly obese patients should have\nlean body weight used when calculating propofol dosing.27 Patients with\nchronic alcohol abuse, as expected, have an increased induction dose\nrequirement. An exaggerated hemodynamic response is likely after induction\nof propofol in patients with cardiovascular disease. Thus, determination of\nthe appropriate propofol induction dose requires careful assessment of\npremedication administration, patient history, and comorbidity.\nMaintenance of general anesthesia with propofol can commonly be\nachieved with infusions rate between 100 to 200 mcg/kg/min. TIVA with\npropofol alone\u2014or together with opioids as part of a balanced anesthetic\u2014\nhas been utilized successfully for all types of surgery. One of the major\nbenefits is prevention of postoperative nausea and vomiting (PONV),\nalthough the antiemetic properties of propofol can be replicated with\nsubhypnotic concentrations. Maintenance infusions as low as 10 mcg/kg/min\n",
+            "metadata": {
+              "end_page": 1477,
+              "level": 1,
+              "hierarchy": [
+                "Page 1478"
+              ],
+              "chunk_index": 0,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "start_page": 1477
+            },
+            "similarity": 0.5216321051120758
+          },
+          {
+            "text": "Figure 18-17 Stress hormone responses to a rapid increase in anesthetic\nconcentration, from 4% to 12% inspired. Volunteers given desflurane showed a larger\nincrease in plasma epinephrine and norepinephrine concentrations than when given isoflurane.\nData are mean \u00b1 SE. A, awake value; B, value after 32 minutes of 0.55 minimum alveolar\nconcentration; time represents minutes after the first breath of increased anesthetic\nconcentration. (Adapted with permission from Weiskopf RB, Moore MA, Eger EI II, et al. Rapid\nincrease in desflurane concentration is associated with greater transient cardiovascular\nstimulation than with rapid increase in isoflurane concentration in humans. Anesthesiology.\n1994;80:1035.)\nThe Pulmonary System\nGeneral Ventilatory Effects\n11  All volatile anesthetics decrease tidal volume and increase respiratory\nrate such that the decrease in minute ventilation at low inspired\nconcentrations is relatively minor (Fig. 18-18). The ventilatory depressant\neffects of volatile anesthetics at higher concentrations are dose dependent,\nwith higher concentrations of volatile anesthetics resulting in greater\ndecreases in tidal volume and greater increases in respiratory rate. Isoflurane\nis an exception in that it does not increase respiratory rate above 1 MAC.\nThe net effect of a gradual decrease in minute ventilation is an associated\nincrease in resting PaCO2. The respiratory depression of volatile anesthetics\ncan be partially antagonized by the \u201cpain\u201d of surgical stimulation. Nitrous\noxide increases respiratory rate as much or more than the volatile\nanesthetics. When N2O is added to inhaled volatile anesthetics PaCO2\n",
+            "metadata": {
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "start_page": 1430,
+              "end_page": 1430,
+              "hierarchy": [
+                "Page 1431"
+              ],
+              "level": 1,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533"
+            },
+            "similarity": 0.4577159881591797
+          },
+          {
+            "text": "Figure 18-19 All inhaled anesthetics produce similar dose-dependent decreases in the\nventilatory response to carbon dioxide (CO2). N2O, nitrous oxide. (Adapted from Eger EI 2nd.\nDesflurane. Anesth Rev. 1993;20:87.)\nInhaled anesthetics, including N2O, also produce a dose-dependent\nattenuation of the ventilatory response to hypoxia. This action appears to\ndepend on the peripheral chemoreceptors. In fact, even subanesthetic\nconcentrations of volatile anesthetics (0.1 MAC) elicit anywhere from a 25%\nto 75% depression of the ventilatory drive to hypoxia (Fig. 18-20). The\nextreme sensitivity of the volatile anesthetics to inhibit ventilatory responses\nto hypoxia has important clinical implications, especially in patients who\ndepend on hypoxic drive to set their level of ventilation, such as those with\n",
+            "metadata": {
+              "level": 1,
+              "hierarchy": [
+                "Page 1435"
+              ],
+              "start_page": 1434,
+              "end_page": 1434,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "chunk_index": 0
+            },
+            "similarity": 0.45619887113571167
+          },
+          {
+            "text": "Figure 18-20 Influence of 0.1 minimum alveolar concentration (MAC) of four volatile anesthetic\nagents on the ventilatory response to a step decrease in end-tidal oxygen concentration.\nValues are mean \u00b1 SD. Subanesthetic concentrations of the volatile anesthetics, except\ndesflurane and sevoflurane, profoundly depress the response to hypoxia. (Adapted with\npermission from Sarton E, Dahan A, Teppema L, et al. Acute pain and central nervous system\narousal do not restore impaired hypoxic ventilatory responses during sevoflurane sedation.\nAnesthesiology. 1996;85:295.)\nAirway smooth muscle extends as far distally as the terminal bronchioles\nand is under the influence of both parasympathetic and sympathetic nerves.\nThe volatile anesthetics relax airway smooth muscle primarily by directly\nreducing smooth muscle tone and indirectly by inhibiting the reflex neural\npathways.99 Direct effects of the volatile anesthetics partially depend on an\nintact bronchial epithelium, suggesting that epithelial damage or inflammation\nsecondary to asthma or a respiratory virus may lessen their bronchodilating\neffect.100 In animal models studying fourth-order bronchi, desflurane and\nsevoflurane were better bronchodilators than isoflurane.100 The dilation was\nepithelium dependent and mediated in part by a cyclooxygenase product and\nnitric oxide. In humans, early administration of desflurane after tracheal\nintubation and high concentrations (1.5 MAC) at steady state will transiently\nincrease airway resistance (Fig. 18-21).101,102 This may be attributed to a\ndirect effect on bronchial smooth muscle from the pungency of desflurane.\n",
+            "metadata": {
+              "start_page": 1436,
+              "level": 1,
+              "end_page": 1436,
+              "hierarchy": [
+                "Page 1437"
+              ],
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533"
+            },
+            "similarity": 0.44130659103393555
+          },
+          {
+            "text": "Figure 18-18 Comparison of mean changes in resting PaCO2, tidal volume, respiratory rate,\nand minute ventilation in patients anesthetized with isoflurane, sevoflurane, desflurane, or\nN2O(N). Anesthetic-induced tachypnea compensates in part for the ventilatory depression\ncaused by all volatile anesthetics (decrease in minute ventilation and tidal volume, and\nconcomitant increase in PaCO2). Desflurane results in the greatest increase in PaCO2 with\ncorresponding reductions in tidal volume and minute ventilation. Isoflurane, like all other inhaled\nagents, increases respiratory rate, but does not result in dose-dependent tachypnea. (Adapted\nfrom Anesthesiology. 1991;74:484, Anesthesiology. 1971;35:26, Anesth Analg. 1987;66:241,\nAnesth Analg. 1978;57:610.)\n",
+            "metadata": {
+              "start_page": 1433,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "hierarchy": [
+                "Page 1434"
+              ],
+              "chunk_index": 0,
+              "level": 1,
+              "end_page": 1433,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533"
+            },
+            "similarity": 0.4305992126464844
+          },
+          {
+            "text": "needed to determine if this translates to a decrease in postoperative\npulmonary complications and ultimately better surgical outcomes.\nVarious anesthetic regimens have been studied to determine if particular\namnestic agents, delivery approaches and pain management strategies change\npostoperative delirium risk in older patients. Unfortunately, these efforts\nhave yielded no agreed-upon superior approach for neuroprotection.38,40\nMany postoperative nausea and vomiting prophylaxis strategies make use of\nBeers Criteria medications that may present an uneven balance of risks and\nbenefits in older patients: prophylactic steroids, transdermal scopolamine,\npromethazine, and prochlorperazine all have cognitive impairment risks.\nThe utility of electroencephalography (EEG) for directed management of\nthe anesthetic plan to lower postoperative complications remains an area of\nnon-consensus. The ENGAGES randomized clinical trial involving 1,232\npatients aged 60 years and older undergoing major surgery with volatile\nanesthetics, and compared postoperative outcomes and delirium rate between\na BIS-guided anesthetic management group and a \u201cusual care\u201d group. The\nBIS-guided group had about a 0.1 MAC reduction. The 30-day mortality rate\nwas lower in the BIS-guided group (0.65% vs. 3.07%) although no other\npostoperative \ncomparisons \nshowed \nrelevant \ndifferences, \nincluding\nhypotension, PONV, delirium and serious complications.70 The BALANCED\ntrial was adequately powered to directly compare lighter (BIS target 50) to\ndeeper (BIS target 35) anesthetic depths with more than 3,300 patients in\neach group, and more than double the reduction in volatile agent MAC was\nachieved between study groups compared to the ENGAGES trial. However,\nthere was no benefit in either BIS group for postoperative mortality at 1 year,\nand no significant differences in serious adverse events after surgery such as\ninfection and cardiac problems.71 Through a subanalysis, which much be\ninterpreted with caution, 515 patients from the BALANCED trial were\nevaluated for postoperative delirium and a significant reduction in delirium\nincidence was reported in the BIS 50 group (19%) compared to the BIS 35\ngroup (28%, odds ratio 0.58 [95% confidence interval: 0.38\u20130.88, P < .01]).\nLikewise, cognitive function at 1-year postsurgery was significantly better in\nthe lighter anesthesia group based upon the abbreviated mental test score\n(AMTS).72 The SHARP randomized clinical trial of 217 elderly patients\nundergoing lumbar spinal fusion directly compared spinal anesthesia with\ntargeted BIS-sedation60\u201370 versus unguided general anesthesia. Researchers\n",
+            "metadata": {
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "level": 1,
+              "end_page": 2758,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "start_page": 2758,
+              "hierarchy": [
+                "Page 2759"
+              ],
+              "chunk_index": 0
+            },
+            "similarity": 0.4281994700431824
+          },
+          {
+            "text": "Figure 31-5 As the dose of neuromuscular blocking agent (intraoperative dose of atracurium,\ncisatracurium, rocuronium, or vecuronium) increases, the likelihood of respiratory\ncomplications increases. (Adapted with permission from McLean DJ, Diaz-Gil D, Farhan HN,\nLadha KS, Kurth T, Eikermann M. Dose-dependent association between intermediate-acting\nneuromuscular-blocking agents and postoperative respiratory complications. Anesthesiology.\n2015;122:1201\u20131213.)\nManagement of Postanesthesia Care\nManaging common problems in the PACU quickly and effectively is as\nimportant as appropriate patient selection and choice of anesthetic technique\nif the patient is to return home on the day of surgery. The three most common\nreasons for delay in patient discharge from the PACU are drowsiness, nausea\n",
+            "metadata": {
+              "level": 1,
+              "hierarchy": [
+                "Page 2577"
+              ],
+              "start_page": 2576,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "end_page": 2576,
+              "chunk_index": 0,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533"
+            },
+            "similarity": 0.42682671546936035
+          },
+          {
+            "text": "and more a cardiac mini-ICU. The smart PACU medical director and hospital\nadministrator will see that with targeted resources, patients may well be\nsafely cared for in a more cost-effective manner with quicker throughput by\nusing a PACU approach.\nPostoperative Pulmonary Dysfunction\nMechanical, hemodynamic, and pharmacologic factors related to surgery and\nanesthesia impair ventilation, oxygenation, and airway maintenance.37 Heavy\nsmoking, obesity, sleep apnea, severe asthma, and COPD increase the risk of\npostoperative ventilatory events.38 Preoperative pulmonary function testing\nhas limited predictive value for postoperative complications,39 perhaps with\nthe exception of postoperative bronchospasm in smokers.40\nInadequate Postoperative Ventilation\nIn PACU patients, mild respiratory acidemia due to decreased minute\nventilation is expected; thus elevated PaCO2 does not necessarily indicate\ninadequate postoperative ventilation. Inadequate ventilation should be\nsuspected when (1) respiratory acidemia occurs coincident with tachypnea,\nanxiety, dyspnea, labored ventilation, or increased sympathetic nervous\nsystem activity; (2) hypercarbia reduces the arterial pH below 7.30; or (3)\nPaCO2 progressively increases with a progressive decrease in arterial pH.\nInadequate Respiratory Drive\n8  During early recovery from anesthesia, residual effects of intravenous\nand inhalation anesthetics blunt the ventilatory responses to both hypercarbia\nand hypoxemia. Sedatives augment depression from opioids or anesthetics.\nHypoventilation and hypercarbia can evolve insidiously during transfer\nand admission to the PACU. Although effects of intraoperative medications\nare usually waning, the peak depressant effect of an intravenous opioid given\njust before transfer occurs in the PACU. Coincident depression of medullary\ncenters that regulate the sympathetic nervous system can blunt signs of\nacidemia or hypoxemia such as hypertension, tachycardia, and agitation,\n",
+            "metadata": {
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "end_page": 4578,
+              "level": 1,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "start_page": 4578,
+              "hierarchy": [
+                "Page 4579"
+              ],
+              "chunk_index": 0
+            },
+            "similarity": 0.4262447953224182
+          }
+        ]
+      },
+      "retrieved_diagram_paths": [],
+      "retrieval_eval": {
+        "checks": [
+          {
+            "name": "status_matches_expectation",
+            "passed": true,
+            "details": {
+              "expected_refused": false,
+              "actual_status": "success"
+            }
+          },
+          {
+            "name": "retrieval_contains_term:respiratory",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_term:depressant",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_any_expected_source",
+            "passed": true,
+            "details": {
+              "expected_any": [
+                "barash",
+                "barash-clinical-anaesthesiology-231220_124533"
+              ]
+            }
+          }
+        ],
+        "passed": true
+      },
+      "ranking_metrics": {
+        "evaluable": true,
+        "k": 8,
+        "mrr": 1.0,
+        "dcg": 17.933558,
+        "idcg": 19.086516,
+        "ndcg": 0.939593,
+        "hit_rate": 1.0,
+        "precision_at_k": 1.0,
+        "term_recall": 1.0,
+        "source_hit": 1.0,
+        "relevant_count": 8
+      },
+      "answer": null,
+      "answer_eval": null,
+      "passed": true
+    },
+    {
+      "case_id": "barash-clinical-anaesthesiology-231220_124533_q003",
+      "query": "Give a structured review of perner haase guttormsen hydroxyethyl starch versus with practical bedside implications.",
+      "rewritten_query": "Give a structured review of perner haase guttormsen hydroxyethyl starch versus with practical bedside implications.",
+      "retrieval": {
+        "status": "success",
+        "max_similarity": 0.4352731704711914,
+        "results": [
+          {
+            "text": "Notably, colloid fluids come suspended in a carrier solution that has\ncrystalloid solutes of varying tonicity. Some concentrated colloid-containing\nsolutions can be isotonic or hypertonic and exert sufficient oncotic pressure\nto completely stay intravascularly or to even translocate substantial volumes\nof IFV into the PV, thereby expanding PV by a volume greater that infused\nvolume. Minimizing IFV expansion offers some advantages: lower volume\nfluid administration, less peripheral and pulmonary edema, and reduced\ncardiopulmonary consequences of later fluid mobilization (Table 16-12).\nDespite these theoretical advantages of colloids, however, exhaustive\nresearch failed to demonstrate the superiority of either colloid or crystalloid\nfluids for intraoperative or postoperative use. The lack of evidence and the\nhigher cost of colloid, especially albumin, should give the clinician pause\nwhen considering its use.\nA 2018 Cochrane66 review of 69 studies (65 RCTs, 4 quasiRCTs) with\n30,020 participants examined effects of crystalloid versus colloid\nresuscitation in critically ill patients in the hospital and emergency out-of-\nhospital setting. Twentyeight studies investigated starch solutions, 20\ndextrans, 7 gelatins, and 22 albumin or fresh frozen plasma (FFP). The\nauthors concluded that colloid versus crystalloid probably makes little or no\ndifference to mortality; however, starches probably slightly increase the need\nfor blood transfusion and RRT. Another Cochrane67 review from 2012 of 86\ntrials, with a total of 5,484 critically ill and surgical patients requiring\nresuscitation, examined the outcomes associated with different types of\ncolloid (albumin, plasma, HES, dextran, and gelatin). The authors concluded\nthat was no detectable differences in mortality between colloids, although\nconfidence intervals were wide. Notably, there were only reports of adverse\nevents related to gelatin and HES. Individual studies subsequent to the above\nmeta-analysis point to more effective volume expansion, lower overall fluid\nadministration, and less vasopressor requirements,68,69 although there are\nstudies show conflicting results regarding mortality and morbidity.70,71\n5  The use of albumin in particular has persisted despite the lack of\nconclusive evidence of efficacy.72 In patients with sepsis or septic shock, the\nEarly Albumin Resuscitation during Septic Shock (EARSS) study73 and the\nAlbumin Italian Outcome Sepsis (ALBIOS) trial74 failed to find any\ndifference in their primary outcomes of 28-day mortality. However, in\n",
+            "metadata": {
+              "chunk_index": 0,
+              "start_page": 1181,
+              "hierarchy": [
+                "Page 1182"
+              ],
+              "level": 1,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "end_page": 1181
+            },
+            "similarity": 0.4352731704711914
+          },
+          {
+            "text": "diabetes. Hourly measurements are reasonable in high-risk patients,\nespecially those receiving continuous insulin through either an insulin pump\nor infusion.\nThe standard glucose dosage for an adult patient is 5 to 10 g/h (100 to\n200 mL of 5% dextrose solution hourly). Intraoperative administration of\nglucose should be guided by the patient\u2019s glucose level. Routine\nadministration \nof \nadditional \nglucose-containing \nIV \nfluids \nis \nnot\nrecommended. It is best to separately record dextrose administration and\nfluids administered.\nMonitoring of the patient who arrives in the operating room with a\nsignificant metabolic impairment such as DKA is similar to management in\nthe medical ICU, and should include hourly determinations of blood glucose,\narterial pH, electrolytes, and fluid balance. Frequent reassessments with\nmedical consultation as necessary guide the use of fluids and electrolytes,\nespecially potassium, insulin, phosphate, and glucose.\nAnother area of monitoring that is extremely important in the diabetic\npatient is positioning on the operating table. Injuries to the limbs or nerves\nare more likely in the patient who arrives in the operating room already\ncompromised by diabetic peripheral vascular disease or neuropathy. The\nperipheral nerves may already be partly ischemic and therefore particularly\nvulnerable to pressure or stretch injuries.\nHyperglycemia and Perioperative Outcomes\nPrior to 2001, little attention was paid to the control of hyperglycemia in the\nperioperative period or in the acute phase of critical illness managed in the\nICU. Permissive or stress-induced hyperglycemia was generally accepted as\nthe norm. Stress-induced hyperglycemia is defined as a transient response to\nthe stress of an acute injury or illness.57 Observational studies have reported\na significant prevalence of hyperglycemia in hospitalized patients. Seventy\npercent of diabetic patients with acute coronary syndrome and 80% of\ncardiac surgery patients in the perioperative period may develop\nhyperglycemia.67 Hyperglycemia in a hospital setting is defined as any blood\nglucose higher than 140 mg/dL.85 Hyperglycemia significantly impairs\nchemotaxis, phagocytosis, generation of reactive oxygen species, and\n",
+            "metadata": {
+              "start_page": 4045,
+              "hierarchy": [
+                "Page 4046"
+              ],
+              "level": 1,
+              "end_page": 4045,
+              "chunk_index": 0,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533"
+            },
+            "similarity": 0.4135286808013916
+          },
+          {
+            "text": "Saline versus Albumin for Fluid Resuscitation in Patients with Traumatic\nBrain Injury (SAFE) Trial, 2-year follow-up of 460 patients with TBI\n(Glasgow Coma Scale score \u226413) demonstrated a nearly twofold increased\nrisk of death in patients receiving colloid.89 Secondary analysis of the SAFE\ntrial data suggested that patients receiving 4% albumin had a higher\nincidence of refractory intracranial hypertension, which may be the\nmechanism of increased mortality.90 However, Van Aken et al.91 pointed out\nthat the 4% albumin solution used in the SAFE trial was suspended in a\nhypo-osmolar carrier solution, so it is still debated whether the albumin, the\nreduced osmolarity, or perhaps both were at fault (\n NICV 16-2).\nNotably, in the experimental animal studies above, 5% albumin was\nsuspended in a slightly hyperosmolar solution in contrast to the hypo-osmolar\n4% solution used in the SAFE clinical trial.91 Although the role of colloid in\nresuscitation of brain-injured patients remains unclear, it is appropriate to\navoid large volumes of hypo-osmotic or hypo-oncotic fluids.92\nBuffered versus Nonbuffered Crystalloid\n6  There has been much interest recently in the differences in effect between\ninfusions of buffered and nonbuffered crystalloid solutions. Individual\nstudies reported metabolic derangements, particularly hyperchloremic\nmetabolic acidosis, and more importantly AKI.93,94 However, data collected\nprior to these studies included in a 2017 Cochrane95 review of 18\nrandomized controlled trials with a total of 1,096 patients examining the\neffects on buffered versus nonbuffered crystalloid IV fluids on adult surgical\npatients. They found insufficient evidence on the effects of fluid therapies on\nmortality and postoperative organ dysfunction, or renal insufficiency. There\nwere differences in postoperative pH of at least 0.05 units (95% CI 0.04\u2013\n0.07; I\u00b2 = 61%), although this difference resolved by postoperative day 1.\nThey also observed higher postoperative serum chloride with nonbuffered\nfluids (MD 6.77 mmol/L, 95% CI 3.38\u201310.17) which persisted until\npostoperative day 1. The clinical significance of any of these positive\nfindings is questionable. Similarly, a 2016 Cochrane96 review examined the\neffects of normal saline versus low chloride solution for adult kidney\ntransplant patients which demonstrated similar outcomes.\n",
+            "metadata": {
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "level": 1,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "start_page": 1185,
+              "end_page": 1185,
+              "hierarchy": [
+                "Page 1186"
+              ]
+            },
+            "similarity": 0.3858622908592224
+          },
+          {
+            "text": "Clinical Implications of Hypertonic\nFluid  Administration\nAn ideal alternative to conventional crystalloid and colloid fluids would be\ninexpensive, produce minimal peripheral or pulmonary edema, generate\nsustained hemodynamic effects, and be effective even if administered in\nsmall volumes. Hypertonic, hypernatremic solutions, with or without added\ncolloid, appear to fulfill some of these criteria (Table 16-13).\nHypertonic solutions exert favorable effects on cerebral hemodynamics,\nin part because of the reciprocal relationship between plasma osmolarity and\nbrain water.87 Resuscitation from hemorrhagic shock with lactated Ringer\nsolution has been shown to increase ICP, but resuscitation with 7.5% saline\ndid not.97 However, in a dog model with hemorrhagic shock and an\nintracranial mass, hypertonic resuscitation demonstrated a delayed increase\nin ICP.98 Despite concerns about hypertonicity and hypernatremia, acute\nincreases in serum sodium to 155 to 160 mEq/L produced no apparent harm\nin hypovolemic trauma patients resuscitated with hypertonic saline (HS).99\nThe theoretical advantages of hypertonic fluids appear most attractive in\nthe acute resuscitation of hypovolemic patients who have decreased\nintracranial compliance. Hypertonic solutions are also used to reduce brain\nwater and intracranial volume during neurosurgery and episodes of increased\nICP. Although reduced brain water can be accomplished with mannitol, some\nclinicians prefer HS solutions.100 HS and mannitol of similar osmolarity\nhave similar effects on brain water, intracranial volume, and ICP. The most\nsalient difference between the two is that infusion of HS increases\nintravascular volume, while diuresis secondary to mannitol decreases\nintravascular volume. While few complications relate specifically to osmotic\ntherapy, acute severe hyperosmolarity could, theoretically, precipitate\nblood\u2013brain barrier opening. Clinical use of HS is associated, as is 0.9%\nsaline, with hyperchloremic acidosis, which usually requires no treatment,\nbut must be differentiated from other causes of metabolic acidosis. Although\nthere are plenty of theoretical benefits of HS in resuscitation of patients with\nTBI, a randomized trial failed to demonstrate an improvement in outcome.101\nThe theoretical benefits of hypertonic fluid administration have also been\nexamined perioperatively. A 2016 Cochrane102 review including 18 studies\nwith 1087 adult perioperative patients ASA class I\u2013III who received some\n",
+            "metadata": {
+              "start_page": 1186,
+              "chunk_index": 0,
+              "hierarchy": [
+                "Page 1187"
+              ],
+              "level": 1,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "end_page": 1186
+            },
+            "similarity": 0.3718219995498657
+          },
+          {
+            "text": "Hyperglycemic hyperosmolar state (HHS) and DKA represent two extremes\nin the spectrum of decompensated DM. DKA is more common than HHS and\naccounts for 1% of diabetes-related emergencies. The mortality rate for HHS\n(10% to 20%) is greater than the mortality from DKA (5%).126 Patients may\npresent with a diabetic emergency, or the condition may develop\nperioperatively because of stress, trauma, or infection.127\nHyperglycemic Hyperosmolar State\nAn occasional elderly patient with minimal or mild DM may present with\nremarkably high blood glucose levels (>600 mg/dL) and profound\ndehydration (9 to 12 L). It is often precipitated by concurrent illnesses such\nas MI, stroke, sepsis, pneumonia, and other serious infections. Patients with\nHHS usually have enough endogenous insulin activity to prevent lipolysis\nand ketosis; even with blood sugar concentrations of 1,000 mg/dL, they are\nnot in ketoacidosis. It takes only one-tenth as much insulin to suppress\nlipolysis as it does to stimulate glucose utilization. Presumably, it is the\ncombination of an impaired thirst response and decreased fluid intake in the\npresence of relative insulin deficiency that allows the hyperglycemia to\ndevelop. Hyperglycemia induces an osmotic diuresis that also contributes to\nintravascular volume depletion. Marked hyperosmolarity may lead to coma\nand seizures, and increased plasma viscosity predisposes patients to\nintravascular thrombosis. HHS responds quickly to rehydration and small\ndoses of insulin. If there are no cardiovascular contraindications, 1 to 2 L (or\n15 to 30 mL/kg) of normal saline should be infused over 1 hour. Insulin, by\nbolus or infusion, should be administered after initial volume has been\nadministered.128 Administering insulin before adequate fluid replacement can\nresult in cardiovascular collapse. Insulin-mediated glucose uptake moves\nwater out of the intravascular space and into cells, causing severe\nhypovolemia. With rapid correction of the hyperosmolarity, cerebral edema\nis a risk, and recovery of mental acuity may be delayed after the blood\nglucose level and circulating volume have been normalized.129 HHS tends to\nhave a substantially higher mortality than DKA, 15% versus 1% respectively,\nin some clinical series.\nDiabetic Ketoacidosis\n",
+            "metadata": {
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "hierarchy": [
+                "Page 4057"
+              ],
+              "start_page": 4056,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "end_page": 4056,
+              "chunk_index": 0,
+              "level": 1
+            },
+            "similarity": 0.37108778953552246
+          }
+        ]
+      },
+      "retrieved_diagram_paths": [],
+      "retrieval_eval": {
+        "checks": [
+          {
+            "name": "status_matches_expectation",
+            "passed": true,
+            "details": {
+              "expected_refused": false,
+              "actual_status": "success"
+            }
+          },
+          {
+            "name": "retrieval_contains_term:perner",
+            "passed": false
+          },
+          {
+            "name": "retrieval_contains_term:haase",
+            "passed": false
+          },
+          {
+            "name": "retrieval_contains_any_expected_source",
+            "passed": true,
+            "details": {
+              "expected_any": [
+                "barash",
+                "barash-clinical-anaesthesiology-231220_124533"
+              ]
+            }
+          }
+        ],
+        "passed": false
+      },
+      "ranking_metrics": {
+        "evaluable": true,
+        "k": 5,
+        "mrr": 1.0,
+        "dcg": 2.948459,
+        "idcg": 2.948459,
+        "ndcg": 1.0,
+        "hit_rate": 1.0,
+        "precision_at_k": 1.0,
+        "term_recall": 0.0,
+        "source_hit": 1.0,
+        "relevant_count": 5
+      },
+      "answer": null,
+      "answer_eval": null,
+      "passed": false
+    },
+    {
+      "case_id": "barash-clinical-anaesthesiology-231220_124533_q004",
+      "query": "How does years age cerebellar infarction likewise result affect perioperative or critical-care decision making?",
+      "rewritten_query": "How does years age cerebellar infarction likewise result affect perioperative or critical-care decision making?",
+      "retrieval": {
+        "status": "success",
+        "max_similarity": 0.4540516138076782,
+        "results": [
+          {
+            "text": "cardiovascular disease.100\u2013103 A particularly interesting risk factor, at least\nfor cardiac surgery patients, is an elevated arterial pulse pressure.104 This\nfinding supports the concept that age-related changes can influence\nperioperative risk just as it appears to influence morbidity in the general\npopulation. The original PeriOperative ISchemic Evaluation study (POISE)\nraised the issue of perioperative \u03b2-blockade increasing the risk of stroke, but\nwhen chronic, less intense \u03b2-blockade is used that risk is not present.105\nStrokes typically occur well after surgery, on average 7 days later, although\nupward of half occur within 24 hours.101,106 Most perioperative strokes are\nischemic and presumably from thromboembolism originating in the heart or\narteries. The contribution of hypotension to focal stroke is questionable,\nalthough the POISE study could be cited as evidence that hypotension\nincreases stroke risk.101 Mortality after a perioperative stroke is\napproximately twice that of a stroke in the general population, and overall\nmortality from perioperative stroke is at least 20%.103,106\nTable 34-5 Effect of Age on Selected Perioperative Complications\nand Associated Mortalitya\nAs mentioned earlier, a recent significant change to nomenclature\nclassifying cognitive dysfunction in surgical patients has occurred.\nPerioperative neurocognitive disorders (PND), which include delirium, are\nsubclassified based upon DSM-V criteria and temporal association with the\nsurgical procedure.36 This shift in nomenclature and diagnostic criteria is an\nimportant step for clear identification, communication, and further study of\nvery common and impactful perioperative cognitive conditions in older\n",
+            "metadata": {
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "end_page": 2767,
+              "hierarchy": [
+                "Page 2768"
+              ],
+              "level": 1,
+              "start_page": 2767
+            },
+            "similarity": 0.4540516138076782
+          },
+          {
+            "text": "occurs in the perioperative period. Discussion of a patient\u2019s goals and values\nand consent to specific procedures can result in a \u201cLimited Attempt at\nResuscitation\u201d agreement between the anesthesiologist and patient.34\nThe prospect of functional impairment of physical capabilities may be\nmore worrisome to the older patient than even death. Elderly patients may\nrequire a long time to return to their preoperative level of function, assuming\nfull recovery is even possible. For example, after major abdominal surgery,\nmost older patients require at least 3 months for ADLs and independent\nADLs to return to baseline.35 Persistent disability at 6 months varies with the\ntask. Although there is only a 9% incidence of persistent ADL deficits, there\nis a 19% incidence of deficit in independent ADLs, and a 52% incidence of\ndiminished grip strength.\nFunctional impairment of neurocognition is common perioperatively. A\nsignificant change to nomenclature classifying cognitive dysfunction in\nsurgical patients has occurred recently. To unify terminology in clinical and\nresearch settings, \u201cperioperative neurocognitive disorders\u201d (PNDs) is now\nused as the primary term for cognitive impairment identified in the pre or\npostoperative periods (see Perioperative Complications for more details).36\nDelirium remains a DSM-V diagnosis of acute onset change in mental\nfunctions with confusion and decreased awareness of surroundings, occurring\nwithin a week after surgery. This is an astoundingly common and costly\ncomplication in older surgical patients. Pre-existing cognitive dysfunction,\nalso believed to be common (estimated in one study to be 25% of older\npatients presenting to preop clinic for orthopedic surgery37), is an important\nrisk factor for postoperative complications, including delirium. Identification\nof patients with baseline cognitive deficits is prudent for risk stratification,\nbut also has important implications for the informed consent process. Despite\nthis, execution of preoperative cognitive evaluation occurs \u201crarely\u201d or\n\u201cnever\u201d for more than 80% of elderly patients.26 Discussion of postoperative\ncognitive impairment is an important disclosure of risk when obtaining\ninformed consent,38 especially because of its high incidence, the gravity of\nwhich seems lost on patients, despite a high degree of awareness. A recent\nsurvey study of patients >70 years old preparing for surgery reported 83% of\npatients were aware of postoperative delirium, with several patients (16%)\neven reporting a previous personal experience with delirium, but concern\nabout the effects of delirium was low (92% of respondents had no more than\n",
+            "metadata": {
+              "level": 1,
+              "end_page": 2743,
+              "hierarchy": [
+                "Page 2744"
+              ],
+              "start_page": 2743,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533"
+            },
+            "similarity": 0.42914772033691406
+          },
+          {
+            "text": "identification of sensitivity may lead to improved outcomes. Additional\nstudies show an association between intraoperative hypotension and other 1-\nmonth adverse outcomes including cardiac events, kidney dysfunction, and\npossibly stroke.94,95 Age above 68 was an independent risk factor in one of\nthese studies.96 Another study that looked at 1-year mortality found no\nrelation to intraoperative hypotension in the younger adult population, but\nfound that the elderly subjects had a higher 1-year mortality that\ncorresponded to the duration of the intraoperative hypotension.97 Again,\nwhether the hypotension is causal or just a marker is not clear, but these\nstudies do suggest that permitting prolonged hypotension may not be a good\nidea.\nFigure 34-13 Schematic outlining some factors associated with normal aging that put patients\nat increased risk for adverse outcomes.\nBecause the mechanisms of aging contribute not only to normal aging but\nalso to the development and severity of disease, one might expect that age\nand disease would interact in their contribution to perioperative risk.\nConfirmation of such a hypothesis is provided by a prospective survey of\nnearly 200,000 anesthetics in France.98 Both age and the number of chronic\ndiseases are associated with an increased rate of complications, but what is\nparticularly interesting is an apparent interaction between these two factors.\nFigure 34-14 demonstrates that, for any given age group, the number of\ncomplications increases with the number of comorbid diseases. To be young\nand sick likely represents a special case as suggested by the point\nrepresenting the no more than 34-year-old group with three or more\ncomorbid diseases. Ignoring that outlier, connecting the dots of equal number\nof comorbid diseases reveals a modest increase in risk with age for patients\n",
+            "metadata": {
+              "end_page": 2764,
+              "hierarchy": [
+                "Page 2765"
+              ],
+              "level": 1,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "start_page": 2764,
+              "chunk_index": 0,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533"
+            },
+            "similarity": 0.4229729175567627
+          },
+          {
+            "text": "Much remains to be studied to better understand what is now referred to\nas postoperative neurocognitive disorder (NCD). Research using the newer\n\u201cmild\u201d and \u201cmajor\u201d subclassification nomenclature is scarce, although the\nnew utilization of DSM-V criteria of both objective and subjective criteria\nalong with consideration for the impact on ADLs will most certainly result in\nmore meaningful and impactful research than the POCD literature has\nproduced to date. The question is whether anesthesia contributes to persistent\ncognitive impairment well after surgery, and if so, to what degree? At this\ntime, understanding the POCD literature can still be valuable.\nA seminal study not only examined surgical patients before and after\nsurgery but included control subjects who were tested over time as well, but\ndid not have surgery. At 3 months, a 10% incidence of POCD was observed\nin the patients who had surgery, in comparison to a 3% incidence of similar\nsymptoms in those who did not.114 Risk factors for POCD at 3 months after\nsurgery include age, lower levels of education, prior history of stroke even in\nthe absence of residual deficit, and POCD at hospital discharge.115 Increased\nmortality at 1 year is associated with patients who demonstrate cognitive\ndecline at both hospital discharge and at 3 months postoperatively.115 A study\nthat examined the association between exposure to surgery and anesthesia\nand cognitive function in 8,503 pairs of middle-aged and elderly twins\nidentified 87 monozygotic and 124 dizygotic same-sexed twin pairs in whom\none had major surgery and the other did not. A statistically significant but\nclinically negligible difference was found in neurocognitive testing. For\nexample, when participants were asked to provide as many names of animals\nas possible in 1 minute, the mean number of animals named was 23.5 in those\nthat were exposed to surgery versus 24.2 in those that were not.116\nRegarding the first few days after surgery, a few observations have been\nmade that are neither surprising nor particularly worrisome. First of all, there\nis a similar degree of cognitive deficit in all age groups, not just the elderly.\nSecond, greater cognitive impairment can be observed with general\nanesthesia than with regional anesthesia.117 Last, for the first few days, the\nchoice of general anesthesia makes a difference with propofol < desflurane <\nsevoflurane in degree of cognitive decline. By 3 months, however, the\npresence of POCD is almost exclusively a problem in older patients.118\nFurthermore, no differences can be detected between general and regional\nanesthetic options.119 By 1 year, even the best controlled studies suggest little\n",
+            "metadata": {
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "start_page": 2771,
+              "level": 1,
+              "chunk_index": 0,
+              "end_page": 2771,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "hierarchy": [
+                "Page 2772"
+              ]
+            },
+            "similarity": 0.40908896923065186
+          },
+          {
+            "text": "Figure 34-14 The interaction between age and comorbid disease. For each age bracket, as\ncomorbid disease increases, so does the rate of complications. The effect of age on the\ncomplication rate is best visualized by examining points of equal comorbid disease. At zero\ndisease, only a modest increase in complications is observed with increasing age. At ever-\nincreasing degrees of comorbid disease, however, the increase in complications with age\nbecomes more and more pronounced. (Reproduced with permission from Tiret L, Desmonts\nJM, Hatton F, Vourc\u2019h G. Complications associated with anaesthesia\u2013a prospective survey in\nFrance. Can Anaesth Soc J. 1986;33:336\u2013344. With kind permission from Springer\nScience+Business Media.)\nCentral nervous system complications are also a major source of\nmorbidity and mortality. The most burdensome problems appear to be stroke,\npostoperative delirium, and postoperative cognitive decline. All have the\npotential to cause debilitating morbidity and an adverse impact on the\npatient\u2019s quality of life, their families, and the cost of medical care.\nIn a nonsurgical elderly population, there is an annual stroke incidence of\napproximately 1%. The incidence of perioperative stroke in the older general\nsurgical population is approximately 0.5% (Table 34-5).99\u2013101 Risk factors\ninclude age, atrial fibrillation (odds ratio 2.0), history of a prior stroke or\nTIA (odds ratio at least 1.6), recent myocardial infarction, COPD or current\nsmoking, acute renal dysfunction or chronic dialysis, the type of surgery, and\na variety of comorbid diseases including diabetes and renal or\n",
+            "metadata": {
+              "chunk_index": 0,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "end_page": 2766,
+              "hierarchy": [
+                "Page 2767"
+              ],
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "level": 1,
+              "start_page": 2766
+            },
+            "similarity": 0.4036746025085449
+          },
+          {
+            "text": "Each of these changes and others can impact the practice of anesthesiology.116 Some important qualities and\nskills, such as expertise, experience, and wisdom, are frequently enhanced. Others, such as creative thinking,\nreaction time, and on-the-spot reasoning, may be compromised. These changes may be accompanied by other\nphysiologic changes that can exacerbate any coexisting sensory or cognitive impairment. The older\nanesthesiologist who is experiencing these neurologic changes is potentially more prone to difficulties in\nperforming some of the critical processes necessary for safe anesthetic management, including rapid processing of\ninformation, assimilation and application of new knowledge, complex decision making, and proper response\ninitiation.\nThere are also important changes in the cardiovascular and musculoskeletal systems that commonly occur and\ncan influence the practice of an aging anesthesiologist. Older anesthesiologists may lack adequate strength to\nperform some of the more physically demanding aspects of practice. Night call can be especially challenging for\nolder physicians who tend to be more vulnerable to the adverse effects of sleep deprivation and may be more\nsusceptible to late-night errors.53\nThe relationship between age-related physiologic changes and professional competence is unclear. Older\nphysicians have been reported to experience an increased incidence of complications and disciplinary actions by\nstate licensing boards.117 And a meta-analysis that examined the relationship between years in practice and\nmarkers of quality of care reported that 73% of the studies demonstrated decreasing performance with some or all\nthe outcomes assessed among physicians of advanced age.118 On the other hand, 22% of the studies reported no\nassociation, or an improvement in performance with age.\nThe correlation between physicians\u2019 age and actual clinical outcomes is even less clear because of wide\nvariability in research design including differences in procedure, procedure volume, and practice site. The\nquestion of age-related competency has been studied extensively in the surgical specialties with various findings\nof improved, unchanged, or worse outcomes when older surgeons are compared with younger colleagues.119\nNeither has the relationship between advanced age and clinical outcomes among anesthesiologists been\ndefinitively established. Suggestions of poorer outcomes come from studies that track surrogates such as the\nfrequency of complaints against senior anesthesiologists and the risk of being found responsible in professional\nlitigation.120 One study that employed high-frequency simulation to create a mock \u201ccannot intubate/cannot\nventilate\u201d scenario found an association between decreased proficiency in establishing an emergency\ncricothyroidotomy and increased operator age and years from residency.121\nAging among anesthesiologists raises complex legal and ethical issues. Several federal laws are relevant to\nthe aging anesthesiologist\u2019s rights and responsibilities regarding continuation of work. These include the Age\nDiscrimination Act, Title VII of the Civil Rights Act, the Medical and Family Leave Act, the Fair Labor Standards\nAct, and the Employee Retirement Income Security Act. Both the American Medical Association and the\nAmerican College of Surgeons have issued statements that call for proactive steps to be taken toward monitoring\ntheir aging members\u2019 competency.115 However, both proposals rely on voluntary action by physicians, unlike many\nother industries which impact public health, where advanced chronologic age automatically triggers limitations on\nthe range of professional activities. In many cases, the decision to limit or retire from practice remains at the sole\ndiscretion of the individual anesthesiologist.\nAge is one of the most important factors in decisions about retirement.122 The median age of retirement for\nanesthesiologists as of 2012 was approximately 64 years.123 Commonly cited reasons for retirement among older\nanesthesiologists include on-call responsibilities, financial considerations, lack of professional satisfaction,\nhealth concerns, and changes in governmental policies and the health care operating environment. The decision to\nretire from anesthesiology is frequently precipitated by concerns about deteriorating clinical skills. In many",
+            "metadata": {
+              "end_page": 265,
+              "level": 1,
+              "hierarchy": [
+                "Page 266"
+              ],
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "start_page": 265,
+              "chunk_index": 0
+            },
+            "similarity": 0.40251606702804565
+          },
+          {
+            "text": "the concurrently growing interest in broader initiatives aimed at improving\ncomprehensive geriatric surgical care, with multidisciplinary and\nmulticomponent approaches to better preparing and managing older surgical\npatients, will ultimately result in focused and tailored function-preserving or\neven function-improving postoperative outcomes in our geriatric patients.\nIn summary, there are a few specific points about the conduct of\nanesthesia that can be made. Besides the obvious caveats (\u201cavoid\nhypotension and hypoxia\u201d), the basic approach to an anesthetic for an elderly\npatient can be described as cautious. Since stroke is likely a thromboembolic\nphenomenon, there may be little that can be done beyond standard, good\nanesthetic care. However, it is not clear that antiplatelet therapy needs to be\ndiscontinued for surgery as much as currently occurs. The efficacy of statins\nhas also not been adequately assessed. As previously discussed, drug\nchoices and dosage have a potentially major impact on delirium. Pain control\nwith multimodal therapy to reduce opioid consumption is probably a good\nthing, but poor pain control may be as bad as too much opioid. Finally, it is\nnot clear what the relationship is between anesthesia and cognitive decline,\nif there is one at all. Given that unsatisfactory statement, it seems reasonable\nto choose the anesthetic technique based on the other factors germane to the\npatient and surgery.\nThe Future\nI will never be an old man. To me, old age is always 15 years older than I\nam.\n\u2014Francis Bacon\nImprovements in surgical and anesthetic techniques that reduce the overall\nstress to the patient are permitting more surgeries to be performed on older\nand sicker patients than ever before. Nevertheless, the older patient will\ncontinue to experience the majority of perioperative adverse outcomes. Much\nremains to be accomplished in the quest to find ways to decrease the\nincidence and severity of those adverse outcomes. The most pressing issues\nare arguably the prevention of postoperative delirium, cognitive decline,\npneumonia, respiratory failure, and cardiovascular complications. Improved\n",
+            "metadata": {
+              "hierarchy": [
+                "Page 2774"
+              ],
+              "chunk_index": 0,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "start_page": 2773,
+              "level": 1,
+              "end_page": 2773,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533"
+            },
+            "similarity": 0.39713263511657715
+          },
+          {
+            "text": "cerebral artery. It is unclear whether application of such monitoring\ndecreases the incidence of perioperative neurologic complications.\nThe etiology of perioperative neurologic complications is believed to be\nischemic injury, either related to emboli (air, atheroma, other particulate\nmatter) or cerebral hypoperfusion in susceptible patients (e.g., pre-existing\ncerebrovascular disease). Ischemic strokes vastly outnumber hemorrhagic\nstrokes in the perioperative setting, tend to be focal and most likely are a\nconsequence of macroembolization. Cognitive dysfunction probably results\nfrom microembolization, hypoperfusion, inflammation, and/or silent\ninfarctions. Risk factors for neurologic complications include advanced age\n(>70 years), pre-existing cerebrovascular disease (e.g., carotid artery\nstenosis >80%), history of prior stroke, peripheral vascular disease,\nascending aortic atheroma, and diabetes. Surgical risk factors that influence\nneurologic outcomes include the duration of CPB, intracardiac procedure\n(e.g., valve replacement), aortic pressure, excessive warming during and\nfollowing \nCPB, \nand \nperioperative \nhypotension.73 \nIntraoperative\nhyperglycemia, hypoglycemia, and postoperative glycemic variability have\nbeen associated with neurocognitive injury.74\u201376\nEmbolization during cardiac surgery is related to aortic atheroma burden;\npatients with mobile atheromas are most susceptible. Suggested surgical\nstrategies for patients with severely diseased aortas who are at increased\nrisk of stroke, include performing surgery under hypothermic fibrillatory\narrest with LV venting and avoidance of aortic cross-clamping, applying a\nsingle cross-clamp (i.e., distal and proximal grafts performed during same\ncross-clamp), relocation of proximal grafts to an area of nondiseased aorta,\nno proximal grafts (internal mammary arteries only), using off-pump\ncoronary artery bypass, or hypothermic circulatory arrest with resection and\ngraft replacement of the diseased aortic segment.\nCerebral oximetry, which is based on the Beer-Lambert law and\nprinciples of optical spectrometry, has gained widespread clinical\nacceptance due to ease of application, interpretation of monitoring data, and\nvalidated protocols to treat desaturations. Numerical values of regional\ncerebral saturation (rScCO2) range from 60% to 80%. It is important to get\nbilateral baseline values, prior to administration of sedative medications and\noxygen. An absolute decrease of rScCO2 value to \u226450% or a decrement from\n",
+            "metadata": {
+              "chunk_index": 0,
+              "start_page": 3345,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "end_page": 3345,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "hierarchy": [
+                "Page 3346"
+              ],
+              "level": 1
+            },
+            "similarity": 0.392431378364563
+          }
+        ]
+      },
+      "retrieved_diagram_paths": [],
+      "retrieval_eval": {
+        "checks": [
+          {
+            "name": "status_matches_expectation",
+            "passed": true,
+            "details": {
+              "expected_refused": false,
+              "actual_status": "success"
+            }
+          },
+          {
+            "name": "retrieval_contains_term:years",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_term:age",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_any_expected_source",
+            "passed": true,
+            "details": {
+              "expected_any": [
+                "barash",
+                "barash-clinical-anaesthesiology-231220_124533"
+              ]
+            }
+          }
+        ],
+        "passed": true
+      },
+      "ranking_metrics": {
+        "evaluable": true,
+        "k": 8,
+        "mrr": 1.0,
+        "dcg": 18.404134,
+        "idcg": 22.106819,
+        "ndcg": 0.832509,
+        "hit_rate": 1.0,
+        "precision_at_k": 1.0,
+        "term_recall": 1.0,
+        "source_hit": 1.0,
+        "relevant_count": 8
+      },
+      "answer": null,
+      "answer_eval": null,
+      "passed": true
+    },
+    {
+      "case_id": "barash-clinical-anaesthesiology-231220_124533_q005",
+      "query": "Give a structured review of occur antepartum peripartum care regional prenatal with practical bedside implications.",
+      "rewritten_query": "Give a structured review of occur antepartum peripartum care regional prenatal with practical bedside implications.",
+      "retrieval": {
+        "status": "success",
+        "max_similarity": 0.41680991649627686,
+        "results": [
+          {
+            "text": "occur. Antepartum and peripartum care in a regional prenatal health center\n(Maternal Level of Care IV) is recommended.\nThe mode of delivery for patients with PAH is controversial. Vaginal\ndelivery is associated with smaller hemodynamic shifts and decreased risk\nof bleeding. However, emergency cesarean delivery for maternal or fetal\ndeterioration may be required. Planned cesarean delivery offers the\nadvantage of ensuring optimal conditions and availability of experienced\nstaff.\nPain during labor and vaginal delivery is especially detrimental because\nit may further increase pulmonary vascular resistance and decrease CO.\nNeuraxial analgesia is useful in attenuating these hemodynamic changes.\nGeneral and epidural anesthesia have been used successfully for cesarean\ndelivery; however, single-shot spinal anesthesia is not recommended due to\nthe abrupt decrease in SVR associated with this technique. Maternal\nmortality from PAH is estimated between 16% and 30%, with most deaths\ndue to right heart failure during labor or the early postpartum period.112\nCardiomyopathy\nPeripartum cardiomyopathy is left ventricular systolic dysfunction occurring\nlate in pregnancy or in the first 6 weeks postpartum. Most cases are\ndiagnosed after delivery. It occurs in approximately 1 in 3,000 births and is\nassociated with a maternal mortality of 10% to 25%.112 Peripartum\ncardiomyopathy is a diagnosis of exclusion; the cause is thought to be related\nto myocarditis or an abnormal immune response. Risk factors include AMA,\nmultiparity, \nmultiple \ngestation, \nsmoking, \ndiabetes, \nobesity, \nand\npreeclampsia.112 Good long-term prognosis is related to recovery of left\nventricular function within 6 months of delivery. Left ventricular ejection\nfraction of less than 30% at diagnosis, significant left ventricular dilation,\nand involvement of the right ventricle are associated with adverse outcomes,\nand these patients should be counseled against future pregnancies. Medical\nmanagement includes preload optimization, afterload reduction, and therapy\nto \nimprove \nmyocardial \ncontractility. \nSome \npatients \nrequire\nthromboprophylaxis or automatic implantable cardioverter defibrillator\nplacement. Intrapartum anesthetic management goals include avoiding\n",
+            "metadata": {
+              "end_page": 3522,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "level": 1,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "hierarchy": [
+                "Page 3523"
+              ],
+              "start_page": 3522,
+              "chunk_index": 0
+            },
+            "similarity": 0.41680991649627686
+          },
+          {
+            "text": "Anatomic and Physiologic Changes of Pregnancy\nAirway and Pulmonary Changes\nCardiovascular Changes\nHematology and Coagulation\nGastrointestinal System\nRenal System\nHepatic System\nEndocrine System\nPlacental Transfer and Fetal Exposure to Anesthetic Drugs\nPlacental Drug Transfer\nUteroplacental Blood Flow\nFetus and Newborn\nAnalgesia for Labor and Vaginal Delivery\nNonpharmacologic Methods of Labor Analgesia\nSystemic Medication\nNeuraxial Analgesia\nInhalation Analgesia and General Anesthesia\nAnesthesia for Cesarean Delivery\nPreoperative Preparation, Monitoring, and Positioning\nNeuraxial Anesthesia\nGeneral Anesthesia\nPostoperative Analgesia\nAnesthetic Complications\nPulmonary Aspiration\nHypotension\nTotal Spinal Anesthesia\nLocal Anesthetic Systemic Toxicity\nPostdural Puncture Headache\nNeurologic Injury\nMaternal Mortality\nManagement of High-Risk Parturients\nHypertensive Disorders of Pregnancy\nObstetric Hemorrhage\nHeart Disease\nDiabetes Mellitus\n",
+            "metadata": {
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "start_page": 3469,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "hierarchy": [
+                "Page 3470"
+              ],
+              "end_page": 3469,
+              "level": 1
+            },
+            "similarity": 0.35010313987731934
+          }
+        ]
+      },
+      "retrieved_diagram_paths": [],
+      "retrieval_eval": {
+        "checks": [
+          {
+            "name": "status_matches_expectation",
+            "passed": true,
+            "details": {
+              "expected_refused": false,
+              "actual_status": "success"
+            }
+          },
+          {
+            "name": "retrieval_contains_term:occur",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_term:antepartum",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_any_expected_source",
+            "passed": true,
+            "details": {
+              "expected_any": [
+                "barash",
+                "barash-clinical-anaesthesiology-231220_124533"
+              ]
+            }
+          }
+        ],
+        "passed": true
+      },
+      "ranking_metrics": {
+        "evaluable": true,
+        "k": 2,
+        "mrr": 1.0,
+        "dcg": 7.63093,
+        "idcg": 7.63093,
+        "ndcg": 1.0,
+        "hit_rate": 1.0,
+        "precision_at_k": 1.0,
+        "term_recall": 1.0,
+        "source_hit": 1.0,
+        "relevant_count": 2
+      },
+      "answer": null,
+      "answer_eval": null,
+      "passed": true
+    }
+  ]
+}

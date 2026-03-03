@@ -1,0 +1,201 @@
+{
+  "generated_at": "2026-03-01T14:10:40.281272",
+  "include_llm": false,
+  "model": "mistral",
+  "summary": {
+    "passed": 2,
+    "total": 2,
+    "pass_rate": 1.0
+  },
+  "results": [
+    {
+      "case_id": "retrieval_spinal_hypotension",
+      "query": "How do you treat hypotension after spinal anesthesia?",
+      "rewritten_query": "How do you treat hypotension after spinal anesthesia?",
+      "retrieval": {
+        "status": "success",
+        "max_similarity": 0.5169358551502228,
+        "results": [
+          {
+            "text": "infusion (starting rate, 25 to 50 \u03bcg/min).75 Managing spinal anesthesia-\ninduced hypotension using a prophylactic phenylephrine infusion results in\nfewer physician interventions and less patient nausea than treating\nhypotension with bolus-dose phenylephrine after it occurs.76 Because\nphenylephrine may result in reflex bradycardia and decreased CO, some\nexperts have proposed using norepinephrine to prevent and treat hypotension\ndue to its \u03b2-adrenergic agonist effects. The relative potency of\nnorepinephrine to phenylephrine is approximately 11:1, and thus the\nsuggested dose of IV bolus norepinephrine for this indication is 6 \u00b5g.77,78\nTotal Spinal Anesthesia\nHigh or total spinal anesthesia is a rare complication of neuraxial local\nanesthetic injection that occurs after excessive cephalad spread of local\nanesthetic in the subarachnoid or epidural space. Unintentional intrathecal\nadministration of epidural medication as a result of dural puncture or catheter\nmigration may also result in this complication. The clinical presentation\nincludes rapid ascent of sensory\u2013motor blockade, dyspnea, inability to\nphonate, and difficulty swallowing. Profound hypotension may lead to\nbrainstem and cerebral hypoperfusion and cause loss of consciousness.\nImmediate vasopressor administration, rapid fluid administration, left uterine\ndisplacement, and leg elevation might be necessary to achieve hemodynamic\nstability. Rapid control of the airway is essential, and tracheal intubation may\nbe necessary to ensure oxygenation without aspiration.\nLocal Anesthetic Systemic Toxicity\nLAST is a potential complication of local anesthetic administration by any\nroute and most commonly manifests clinically as neurologic or\ncardiovascular sequelae (see Chapter 22). Resuscitation equipment\n(intravenous access, airway equipment, emergency medications, and suction)\nshould be readily available when administering local anesthetics. To avoid\nLAST, strict adherence to recommended local anesthetic doses, methods to\ndetect misplaced needles and catheters (e.g., use of ultrasound), needle and\n",
+            "metadata": {
+              "level": 1,
+              "hierarchy": [
+                "Page 3503"
+              ],
+              "end_page": 3502,
+              "start_page": 3502,
+              "chunk_index": 0,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "book_id": "barash-clinical-anaesthesiology-231220_124533"
+            },
+            "similarity": 0.5169358551502228
+          },
+          {
+            "text": "When coronary artery blood flow and myocardial metabolism were\nmeasured during spinal anesthesia to T4 in hypertensive and\nnormotensive patients, decreases in coronary blood flow paralleled\nthe decrease in mean arterial blood pressure, and the percent\nextraction of myocardial oxygen was unchanged. Extraction of\noxygen was unchanged because myocardial work paralleled the\ndecrease in mean arterial blood pressure and coronary blood flow.34\nA high thoracic block in patients with cardiac ischemia can improve\nglobal and regional myocardial function and reverse ischemic\nchanges, likely as a result of reduced myocardial oxygen demand and\nleft ventricular afterload.35 Both infarction size and ischemia-\ninduced arrhythmias improved in coronary occlusion experiments in\nanimals, with no apparent vasodilatory effect on the coronary\n\nvessels.36 These data support previous observations37 but still do not\nprovide a patient-by-patient indication of the organ most at risk for\nflow-related ischemia.\nThe clinical question of what level of decrease in arterial blood\npressure after a neuraxial block is acceptable without a significant\ndecrease in organ perfusion (e.g., brain, liver, gut) remains to be\nanswered, although some human and animal data are available (see\nrespective sections). Once arterial blood pressure decreases to a level\nat which treatment is believed to be necessary, ephedrine, a mixed\nadrenergic agonist, provides more appropriate therapy for the\nnoncardiac circulatory sequelae of neuraxial block than does a pure\n\u03b1-adrenergic agonist (see Chapter 13), unless the patient has a\nspecific and defined arterial blood pressure requirement.38 That the\ndecrease in arterial blood pressure after neuraxial block can be\nminimized by the administration of crystalloids intravenously is\nprobably not a valid concept. Specifically, 250- to 2000-mL pre-\nblock hydration regimens may temporarily increase preload and\ncardiac output but do not consistently increase arterial blood\npressure or prevent hypotension and are not recommended for\nroutine use.13,39 Useful techniques to prevent hypotension include\nthe repeated low-dose local anesthetic boluses through a continuous\nspinal catheter,40 small-dose unilateral spinal anesthesia, and\nselective small-dose spinal anesthesia. Although prevention of\nhypotension caused by vasodilatation using a prophylactic\n(\u201cpreloading\u201d) infusion of colloid or crystalloid during the\nperformance of the neuraxial block (\u201ccoloading\u201d) has been reported,\nthis is no longer observed as a routine practice.39\nCENTRAL NERVOUS SYSTEM\n\nSpinal anesthesia\u2013induced hypotension may decrease regional\ncerebral blood flow (CBF) in elderly patients and those with\npreexisting hypertension. In a study of elderly patients who had\nhypotension during bupivacaine spinal anesthesia, Minville and\ncolleagues demonstrated a significant but transient decrease of\nmiddle cerebral artery blood flow velocity and an increase in cerebral\nvascular resistance, both of which suggest a decrease in cerebral\nperfusion.41 There was no change in cognitive function after surgery\nin any of these patients. Both CBF and velocity decline as a result of\nchanges in the cerebral vasculature, especially in the elderly.\nWhether cerebral autoregulation is impaired in the elderly is still\ndebatable (see Chapter 61).\nKety and colleagues42 demonstrated that producing spinal\nanesthesia to the midthoracic levels with procaine, even in patients\nwith essential hypertension, results in a decrease in mean arterial\nblood pressure of 26% (155 to 115 mm Hg) accompanied by a 12% (52\nto 46 mL/100 g per minute) decrease in CBF. When the level of\n",
+            "metadata": {
+              "chunk_index": 2,
+              "end_page": 6034,
+              "hierarchy": "[\"Volume 1\", \"Section III. Anesthesia Management\", \"41. Spinal, Epidural, and Caudal Anesthesia\", \"Physiologic Effects\"]",
+              "diagram_paths": "[]",
+              "level": 4,
+              "book_name": "miller",
+              "start_page": 6027,
+              "book_id": "miller"
+            },
+            "similarity": 0.5075870454311371
+          },
+          {
+            "text": "ial\nblockade if the patient faces harm. Recent guidance has placed more\nemphasis on avoiding hypotension during neuraxial anesthesia\n(defined as 20%\u201330% below baseline) in order to reduce the\npossibility of spinal cord ischemia or infarction.76 In the setting of\nspinal anesthesia, hypotension (defined as systolic blood pressure\n<90 mm Hg) is more likely to occur with a variety of factors\nincluding peak block height greater than or equal to T5, age older\nthan or equal to 40 years, baseline systolic blood pressure less than\n120 mm Hg, combined spinal and general anesthesia, spinal\npuncture at or above the L2\u2013L3 interspace, and the addition of\nphenylephrine to the local anesthetic.50 Hypotension (defined as a\nreduction in mean arterial blood pressure >30%) is independently\nassociated with chronic alcohol consumption, history of\nhypertension, BMI, and the urgency of surgery.409 Nausea is a\ncommon symptom of hypotension in the setting of neuraxial\nanesthesia, as are vomiting, dizziness, and dyspnea.\nCardiac Arrest (see also Chapter 82)\n\nIn a review of closed insurance claims, Caplan and associates\nidentified 14 cases of sudden cardiac arrest in healthy patients\nreceiving spinal anesthesia.410 The etiology of sudden cardiac arrest\nafter spinal anesthesia is not understood. Whether these catastrophic\nevents represented lack of vigilant monitoring and treatment as\nopposed to some mysterious physiologic explanation is not\nknown.411 The latter notwithstanding, it is clear that hypoxemia and\nover-sedation are complicit in the severe bradycardia and asystole\nthat can occur suddenly during well-conducted spinal\nanesthesia.412,413 Curiously, these rare events seem to be\npreferentially associated with spinal anesthesia rather than epidural\ntechniques. In their inaugural survey of French anesthesiologists,\nAuroy and colleagues reported the rate of cardiac arrest to be\n6.4/10,000 after spinal anesthesia compared with 1/10,000 for all\nother neuraxial and peripheral regional anesthesia techniques\ncombined.365 In their larger follow-up survey of all anesthesiologists\nin France, Auroy and colleagues reported 10 cases of cardiac arrest\nafter 35,439 spinal anesthetics (2.5/10,000) and none after 5561\nepidural techniques.371 Most recently, Cook and colleagues\nuncovered three cases of cardiovascular collapse among 707,425\nneuraxial blocks (0.04/10,000) during their nationwide audit, two of\nwhich were during spinal anesthesia and one in the setting of\nCSE.344\nRESPIRATORY\nNeuraxial opioids are commonly added to local anesthetic solutions\nto improve the quality and duration of neuraxial anesthesia and\nanalgesia. The risk of respiratory depression associated with\n\nneuraxial opioids is dose dependent, with a reported frequency that\napproaches 3% after the administration of 0.8 mg of intrathecal\nmorphine.414 The prevalence of clinically relevant respiratory\ndepression following neuraxial opioid administration in the obstetric\npopulation is 5.96\u20138.67 cases per 10,000.415 Respiratory depression\nmay stem from rostral spread of opioids within the CSF to the\nchemosensitive respiratory centers in the brainstem.65 With\nlipophilic anesthetics, respiratory depression is generally an early\nphenomenon occurring within the first 30 minutes; respiratory\ndepression has never been described more than 2 hours after the\nadministration of intrathecal fentanyl or sufentanil.225 With\nintrathecal morphine, there",
+            "metadata": {
+              "start_page": 6108,
+              "end_page": 6128,
+              "diagram_paths": "[]",
+              "book_id": "miller",
+              "level": 4,
+              "hierarchy": "[\"Volume 1\", \"Section III. Anesthesia Management\", \"41. Spinal, Epidural, and Caudal Anesthesia\", \"Complications\"]",
+              "book_name": "miller",
+              "chunk_index": 6
+            },
+            "similarity": 0.5043253004550934
+          },
+          {
+            "text": "autoregulation of cerebral blood flow. Current guidelines, based only on\nexpert opinion, suggest keeping blood pressure within 20% to 30% of\nbaseline.156 However, rare, uniquely susceptible patients may suffer spinal\ncord ischemia during an otherwise routine subarachnoid anesthetic.165\nFigure 35-38 Approach to perioperative nerve injury. BP, blood pressure; EMG,\nelectromyography; NCS, nerve conduction studies; PMR, physical medicine rehabilitation\nspecialty consultation; PN, peripheral nerve. (Adapted from Watson JC, Huntoon MA.\nNeurologic evaluation and management of perioperative nerve injury. Reg Anesth Pain Med.\n2015;40:491\u2013501.)\nSpinal Stenosis\nPre-existing spinal stenosis may increase the risk of neurologic injury after\nneuraxial block. Osteoporosis can cause degenerative spinal stenosis. Also,\nhypertrophy of the ligamentum flavum and bony elements of the spinal canal\ncan reduce spinal canal cross-sectional area, limiting space for the spinal\n",
+            "metadata": {
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "chunk_index": 0,
+              "hierarchy": [
+                "Page 2871"
+              ],
+              "level": 1,
+              "end_page": 2870,
+              "start_page": 2870,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533"
+            },
+            "similarity": 0.5032424330711365
+          },
+          {
+            "text": "agent or spinal anesthetic with sedation as needed for patient comfort. The\nprimary outcome was a composite of postoperative death by day 60 and\ninability to walk independently at day 60. The primary composite outcome\nwas not different between study groups (occurred in 18.5% of spinal\nanesthesia patients and 18% of GA patients). Other important indicators of\npostoperative recovery, delirium and hospital length of stay, were likewise\nsimilar between the groups. Thus, neither anesthetic approach is clearly\nsuperior in this patient population.56 Delayed neurocognitive recovery\noccurred in 38 of 226 patients (16.8%) receiving total intravenous anesthesia\n(TIVA) and in 46 of 221 patients receiving sevoflurane anesthesia (20.8%)\nfor laparoscopic abdominal surgery.57 The THRIVE trial (Trajectories of\nRecovery after Intravenous Propofol vs. inhaled VolatilE anesthesia) is\npresently underway and is a large, pragmatic, comparative effectiveness,\npatient-level randomized controlled trial comparing postoperative quality of\nrecovery and anesthetic safety among adult patients having either propofol\nbased TIVA or volatile anesthesia for noncardiac surgery.58 Although not\nspecifically targeting elderly patients, the results are nonetheless anticipated,\nas little clear evidence exists for clinically important differences in\npostoperative outcomes between these anesthetic regimens. Growing\nevidence suggests that surgery-associated inflammation may be a more\nimportant cause of postoperative complications such as cognitive\nimpairment, and may be of greater significance than the as-of-yet\nindistinguishable differences between anesthetic regimens.57,59\nWhether general or neuraxial anesthesia is used, the maintenance phase\nof anesthesia will commonly result in a significant decrease in systemic\nblood pressure, more so than typically occurs in younger patients. Although\ndecreases in both systemic vascular resistance and cardiac output likely\noccur, the decrease in vascular resistance is probably the largest contributor\nto the decrease in blood pressure. Figure 34-12 demonstrates this large\ndecrease in vascular resistance and further shows that venous pooling is\nresponsible for a decrease in preload that in turn decreases cardiac output. A\nlarge, multi-center retrospective cohort study of patients undergoing\nnoncardiac surgery showed that a MAP <55 mm Hg was associated with\nincreased odds of postoperative delirium, and this risk further grew with\nincreasing duration of hypotension.60 Because vascular resistance contributes\nsignificantly to the decrease in blood pressure during anesthesia, it has been\n",
+            "metadata": {
+              "chunk_index": 0,
+              "start_page": 2754,
+              "hierarchy": [
+                "Page 2755"
+              ],
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "level": 1,
+              "end_page": 2754
+            },
+            "similarity": 0.4763474464416504
+          },
+          {
+            "text": "Some centers use spinal anesthesia most commonly for ex-premature infants\nundergoing hernia repair because the risk of postoperative apnea is reduced\nand because neurodevelopmental outcome is likely less affected by spinal\nanesthesia compared to general. When planning spinal anesthesia, general\nanesthesia should be available as a backup because spinal anesthesia failure\nrates for this population are as high as 20%.27 The same study found that\nalthough apnea in the immediate postoperative period may be lower with\nspinal anesthesia, it does not reduce the risk of apnea seen up to 12 hours\nafter surgery. Furthermore, premature infants and those who have\npostoperative apnea within 30 minutes after surgery are more likely to have\napnea up to 12 hours after surgery.\nAdults\nSpinal anesthesia is suitable for pelvic, lower abdominal, lower extremity,\nand even laparoscopic cholecystectomy surgery. Motor block of the legs may\ndelay a patient\u2019s ability to walk. However, the use of a short-acting local\nanesthetic will minimize this problem. Different drugs and drug\nconcentrations have been used for spinal anesthesia. Though any intrathecal\nlocal anesthetic can cause transient neurologic symptoms, lidocaine use is\nparticularly problematic because of its high association with transient\nneurologic symptoms. Bupivacaine can be problematic for ambulatory\nsurgical procedures because of its longer duration of action. In one study\nwhere spinal anesthesia was compared with either 0.75% hyperbaric\nbupivacaine 7.5 mg (n = 53) or 2% preservative-free 2-chloroprocaine 40\nmg (n = 53), discharge readiness was 76 minutes faster with\nchloroprocaine.28\nAlthough headache is a complication of lumbar puncture, smaller-gauge\nneedles result in a lower incidence of postdural puncture headache. For those\npatients who do receive spinal anesthesia, it is incumbent on the\nanesthesiologist and the facility to have follow-up with telephone calls to\nensure no disabling symptoms of headache have developed. If the headache\ndoes not respond to bed rest, analgesics, and oral hydration, the patient must\nreturn to hospital for a course of intravenous caffeine therapy or an epidural\nblood patch. Instructions regarding postdural puncture headache should be\nincluded in the preoperative consent process.\n",
+            "metadata": {
+              "chunk_index": 0,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "start_page": 2568,
+              "end_page": 2568,
+              "level": 1,
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "hierarchy": [
+                "Page 2569"
+              ]
+            },
+            "similarity": 0.47281312942504883
+          },
+          {
+            "text": " CC, Wyles SP, et al. Is Local Infiltration Analgesia Superior to\nPeripheral Nerve Blockade for Pain Management After THA: A Network Meta-analysis. Clin\nOrthop Relat Res. 2016;474(2):495\u2013516.\n62. Guay J. The effect of neuraxial blocks on surgical blood loss and blood transfusion requirements:\na meta-analysis. J Clin Anesth. 2006;18(2):124\u2013128.\n63. Sharrock NE, Bading B, Mineo R, Blumenfeld JD. Deliberate hypotensive epidural anesthesia for\npatients with normal and low cardiac output. Anesth Analg. 1994;79(5):899\u2013904.\n64. Jiang J, Zhou R, Li B, Xue F. Is deliberate hypotension a safe technique for orthopedic surgery?:\na systematic review and meta-analysis of parallel randomized controlled trials. J Orthop Surg\nRes. 2019;14(1):409.\n65. Sessler DI, Bloomstone JA, Aronson S, et al; Physiology group, Preoperative blood pressure\ngroup, Intraoperative blood pressure group, Postoperative blood pressure group. Perioperative\nQuality Initiative consensus statement on intraoperative blood pressure, risk and outcomes for\nelective surgery. Br J Anaesth. 2019;122(5):563\u2013574.\n66. Liu J, Zhong H, DeMeo D, et al. Controlled hypotension during neuraxial anesthesia is not\nassociated with increased odds of in-hospital common severe medical complications in patients\n",
+            "metadata": {
+              "level": 1,
+              "book_id": "barash-clinical-anaesthesiology-231220_124533",
+              "book_name": "Barash-Clinical-Anaesthesiology-231220_124533",
+              "chunk_index": 1,
+              "end_page": 4397,
+              "hierarchy": [
+                "Page 4398"
+              ],
+              "start_page": 4397
+            },
+            "similarity": 0.47082340717315674
+          },
+          {
+            "text": "perfusion.41 There was no change in cognitive function after surgery\nin any of these patients. Both CBF and velocity decline as a result of\nchanges in the cerebral vasculature, especially in the elderly.\nWhether cerebral autoregulation is impaired in the elderly is still\ndebatable (see Chapter 61).\nKety and colleagues42 demonstrated that producing spinal\nanesthesia to the midthoracic levels with procaine, even in patients\nwith essential hypertension, results in a decrease in mean arterial\nblood pressure of 26% (155 to 115 mm Hg) accompanied by a 12% (52\nto 46 mL/100 g per minute) decrease in CBF. When the level of\nspinal anesthesia was purposely increased to produce higher levels of\nblock (T4) in normotensive and hypertensive patients, CBF was\nunchanged in the normotensive group (45\u201346 mL/100 g per\nminute), whereas a 19% decrease occurred in the apparently\nuntreated hypertensive patients (46.5\u201337.5 mL/100 g per minute).43\nRESPIRATORY\nAlterations in pulmonary variables in healthy and even in elderly\npatients during neuraxial block are usually of little clinical\nconsequence.44 A decrease in vital capacity follows a reduction in\nexpiratory reserve volume related to paralysis of the abdominal\n\nmuscles necessary for forced exhalation rather than a decrease in\nphrenic or diaphragmatic function.45 Despite this decrease in vital\ncapacity, blockade of the intercostal and abdominal muscles during\nneuraxial anesthesia is adequately compensated by unaltered\nfunction of the diaphragm and other accessory respiratory muscles\n(e.g., sternomastoid, scalenes), especially for forceful inspiration and\nexpiration.46 Nonetheless, neuraxial block should be used cautiously\nin the setting of severe respiratory disease because paralysis of the\nintercostal and abdominal muscles is common. However rare,\nrespiratory arrest associated with spinal anesthesia is often unrelated\nto phrenic or inspiratory dysfunction but rather to hypoperfusion of\nthe respiratory centers in the brainstem. Supportive evidence for this\nconcept is observed after resuscitation, when apnea almost always\ndisappears as soon as pharmacologic and intravascular fluid\ntherapies have restored cardiac output and arterial blood pressure.\nPregnancy\nIn young healthy pregnant people undergoing cesarean delivery,\nspinal bupivacaine, ropivacaine, and levobupivacaine affect\npulmonary function minimally, irrespective of the peak sensory\nblock level.47 However, in overweight pregnant people, vital capacity\ndeclines to a greater extent and recovers more slowly compared with\nnormal-weight pregnant people after hyperbaric spinal bupivacaine\nadministration (see also Chapter 58).48\nObesity (see also Chapter 54)\nThe impact of spinal anesthesia on lung volume variables is\nsignificantly more in overweight patients than in normal-weight\npatients.48 The magnitude of decline in vital capacity is proportional\n\nto the BMI value (vital capacity 19% for BMI 30\u201340 kg/m2 vs. 33%\nfor BMI >40 kg/m2).49\nGASTROINTESTINAL\nNeuraxial blockade from T6 to L1 disrupts splanchnic sympathetic\ninnervation to the gastrointestinal tract, resulting in a contracted gut\nand hyperperistalsis. Nausea and vomiting may be associated with\nneuraxial block in as much as 20% of patients and is primarily\nrelated to gastrointestinal hyperperistalsis caused by unopposed\nparasympathetic (vagal) activity.50 Atropine is effective in treating\nnausea associated with high (T5) subarachnoid anesthesia",
+            "metadata": {
+              "hierarchy": "[\"Volume 1\", \"Section III. Anesthesia Management\", \"41. Spinal, Epidural, and Caudal Anesthesia\", \"Physiologic Effects\"]",
+              "chunk_index": 3,
+              "start_page": 6027,
+              "book_id": "miller",
+              "level": 4,
+              "book_name": "miller",
+              "end_page": 6034,
+              "diagram_paths": "[]"
+            },
+            "similarity": 0.4645843505859375
+          }
+        ]
+      },
+      "retrieval_eval": {
+        "checks": [
+          {
+            "name": "status_matches_expectation",
+            "passed": true,
+            "details": {
+              "expected_refused": false,
+              "actual_status": "success"
+            }
+          },
+          {
+            "name": "retrieval_contains_term:spinal",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_term:hypotension",
+            "passed": true
+          },
+          {
+            "name": "retrieval_contains_any_expected_source",
+            "passed": true,
+            "details": {
+              "expected_any": [
+                "anaesth",
+                "miller",
+                "barash"
+              ]
+            }
+          }
+        ],
+        "passed": true
+      },
+      "answer": null,
+      "answer_eval": null,
+      "passed": true
+    },
+    {
+      "case_id": "out_of_scope_refusal",
+      "query": "Who won the FIFA world cup in 2018?",
+      "rewritten_query": "Who won the FIFA world cup in 2018?",
+      "retrieval": {
+        "status": "refused",
+        "message": "I cannot find sufficiently relevant information in the indexed medical sources.",
+        "similarity": 0.02944648265838623
+      },
+      "retrieval_eval": {
+        "checks": [
+          {
+            "name": "status_matches_expectation",
+            "passed": true,
+            "details": {
+              "expected_refused": true,
+              "actual_status": "refused"
+            }
+          }
+        ],
+        "passed": true
+      },
+      "answer": null,
+      "answer_eval": null,
+      "passed": true
+    }
+  ]
+}
